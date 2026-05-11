@@ -1,19 +1,27 @@
 body {
     font-family: Arial;
-    background-color: lightgray;
     text-align: center;
+    background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 h1 {
     font-weight: bold;
     color: darkblue;
+    border-radius: 45px 36px 67px 89px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    width: 350px;
+    margin: 20px auto;
 }
 
 table {
     width: 40%;
     margin: 20px auto;
     border-collapse: collapse;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
 }
 
 thead {
@@ -30,6 +38,8 @@ td {
     border: 2px solid black;
     padding: 10px;
 }
+
+/* Tipos de borde */
 
 .solid {
     border: 4px solid black;
@@ -60,7 +70,7 @@ td {
 }
 
 .outset {
-    border: 6px outset rgb(128, 128, 128);
+    border: 6px outset gray;
 }
 
 .none {
@@ -71,11 +81,13 @@ td {
     border: hidden;
 }
 
+/* Bordes diferentes */
+
 .diferentes {
     width: 350px;
     margin: 20px auto;
     padding: 15px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
 
     border-top: 6px solid red;
     border-right: 6px dotted blue;
@@ -83,12 +95,13 @@ td {
     border-left: 6px double orange;
 }
 
+/* Border color */
 
 .borde-color {
     width: 350px;
     margin: 20px auto;
     padding: 15px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
 
     border-top: 6px solid rgb(109, 59, 59);
     border-right: 6px dotted blue;
@@ -96,26 +109,105 @@ td {
     border-left: 6px double rgb(0, 255, 34);
 }
 
+/* Figuras */
 
 .figura {
     width: 200px;
     height: 120px;
     margin: 30px auto;
-    background-color: lightblue;
+    background-color: rgba(173, 216, 230, 0.85);
     border: 4px solid black;
 }
 
-/* Bordes suavemente redondeados */
 .figura1 {
-    border-radius: 76px;
+    border-radius: 65px;
 }
 
-/* Forma cápsula */
 .figura2 {
-    border-radius: 50px 70px;
+    border-radius: 70px 90px;
 }
 
-/* Esquinas todas diferentes */
 .figura3 {
-    border-radius: 45px 36px 67px 89px;
+    border-radius: 45px 56px 77px 98px;
+}
+
+.img1, .img2, .img3, .img4, .img5 {
+    width: 400px;
+    height: 250px;
+    margin: 30px auto;
+    border: 4px solid black;
+}
+
+.img1, .img2, .img3, .img4, .img5 {
+    width: 400px;
+    height: 250px;
+    margin: 30px auto;
+    border: 4px solid black;
+    background-image: url("https://wallpaperaccess.com/full/5651981.jpg");
+}
+
+/* Tamaño en píxeles */
+.img1 {
+    background-size: 200px 120px;
+}
+
+/* Contain */
+.img2 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* No repeat */
+.img3 {
+    background-repeat: no-repeat;
+}
+
+/* Repeat */
+.img4 {
+    background-size: 100px 70px;
+    background-repeat: repeat;
+}
+
+/* Position */
+.img5 {
+    background-size: 150px 100px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+.comparacion {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.contain, .cover {
+    width: 500px;
+    height: 300px;
+    border: 8px solid orange;
+
+    background-image:
+        url("araña3.jpg"),
+        url("paisajeara.jpg"),
+        url("fondo_naranja.jpg");
+
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, center, center;
+}
+
+/* IZQUIERDA */
+.contain {
+    background-size:
+        150px 100px,
+        contain,
+        cover;
+}
+
+/* DERECHA */
+.cover {
+    background-size:
+        500px 300px,
+        cover,
+        cover;
 }
