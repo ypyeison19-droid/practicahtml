@@ -1,0 +1,32 @@
+body {
+    font-family: Arial;
+    background-color: lightgray;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    color: darkblue;
+}
+
+table {
+    width: 40%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+thead {
+    background-color: darkblue;
+    color: white;
+}
+
+th {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+td {
+    border: 2px solid black;
+    padding: 10px;
+}
