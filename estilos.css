@@ -30,3 +30,55 @@ td {
     border: 2px solid black;
     padding: 10px;
 }
+
+.solid {
+    border: 4px solid black;
+}
+
+.dotted {
+    border: 4px dotted black;
+}
+
+.dashed {
+    border: 4px dashed black;
+}
+
+.double {
+    border: 6px double black;
+}
+
+.groove {
+    border: 6px groove gray;
+}
+
+.ridge {
+    border: 6px ridge gray;
+}
+
+.inset {
+    border: 6px inset gray;
+}
+
+.outset {
+    border: 6px outset gray;
+}
+
+.none {
+    border: none;
+}
+
+.hidden {
+    border: hidden;
+}
+
+.diferentes {
+    width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+
+    border-top: 6px solid red;
+    border-right: 6px dotted blue;
+    border-bottom: 6px dashed green;
+    border-left: 6px double orange;
+}
