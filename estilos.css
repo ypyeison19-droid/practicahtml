@@ -60,7 +60,7 @@ td {
 }
 
 .outset {
-    border: 6px outset gray;
+    border: 6px outset rgb(128, 128, 128);
 }
 
 .none {
@@ -81,4 +81,41 @@ td {
     border-right: 6px dotted blue;
     border-bottom: 6px dashed green;
     border-left: 6px double orange;
+}
+
+
+.borde-color {
+    width: 350px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+
+    border-top: 6px solid rgb(109, 59, 59);
+    border-right: 6px dotted blue;
+    border-bottom: 6px dashed rgb(0, 255, 221);
+    border-left: 6px double rgb(0, 255, 34);
+}
+
+
+.figura {
+    width: 200px;
+    height: 120px;
+    margin: 30px auto;
+    background-color: lightblue;
+    border: 4px solid black;
+}
+
+/* Bordes suavemente redondeados */
+.figura1 {
+    border-radius: 76px;
+}
+
+/* Forma cápsula */
+.figura2 {
+    border-radius: 50px 70px;
+}
+
+/* Esquinas todas diferentes */
+.figura3 {
+    border-radius: 45px 36px 67px 89px;
 }
