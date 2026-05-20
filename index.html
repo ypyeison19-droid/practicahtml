@@ -351,5 +351,179 @@
 
 </div>
 
+
+<div class="degradado-lineal"></div>
+
+<div class="degradado-dos-colores">
+
+    
+</div>
+
+<div class="degradado-personalizado"> 
+</div>
+
+    <div style="
+        width: 400px;
+        height: 200px;
+        margin: 50px auto;
+        border: 2px solid #000;
+        background: linear-gradient( to top right , rgb(255, 0, 0) , white , rgb(0, 4, 255));
+        "> 
+        </div>
+
+
+
+        //// circulo radial ejemplo 1
+
+
+
+    <div style="
+height: 200px;
+width: 400px;
+margin: 50px auto;
+border: 5px solid black;
+
+background-image: radial-gradient(
+circle closest-side at 20% 20%,
+red,
+green,
+orange
+);
+">
+</div>
+
+
+
+/// ejemplo 2
+
+    <div style="
+height: 200px;
+width: 400px;
+margin: 50px auto;
+border: 5px solid black;
+
+background-image: radial-gradient(
+circle farthest-side at 20% 20%,
+red,
+green,
+orange
+);
+">
+
+</div>
+
+
+
+
+///// otro ejemplo 3  circle
+
+
+    <div style="
+height: 200px;
+width: 400px;
+margin: 50px auto;
+border: 5px solid black;
+
+background-image: radial-gradient(
+circle farthest-corner at 20% 20%,
+red,
+green,
+orange
+);
+">
+    </div>
+
+    /////// ejemplo 4 elipse radial
+
+    <div style="
+height: 200px;
+width: 400px;
+margin: 50px auto;
+border: 5px solid black;
+
+background-image: radial-gradient(
+ellipse closest-corner at 20% 20%,
+red,
+green,
+orange
+);
+">
+    </div>
+
+
+    ///// ejemplo con repeeting radial
+
+   <div style="
+
+height: 200px;
+width: 400px;
+margin: 50px auto;
+border: 5px solid black;
+
+background-image: repeating-radial-gradient(
+
+circle at 20% 20%,
+rgb(255, 0, 234) 10%,
+green 20%,
+orange 30%
+);
+">
+</div>
+
+
+//// otro ejemplo con repeating radial
+<div style="
+
+height: 300px;
+
+width: 500px;
+
+margin: 50px auto;
+
+border: 6px solid black;
+
+background-image: repeating-radial-gradient(
+
+circle at center,
+
+#ff0000 0%,
+
+#ff00ff 8%,
+
+#00ffff 16%,
+
+#ffff00 24%,
+
+#0000ff 32%,
+
+#00ff00 40%
+
+);
+
+animation: girar 5s linear infinite;
+
+">
+</div>
+
+<style>
+
+@keyframes girar {
+
+    0%{
+
+        transform: rotate(0deg);
+
+    }
+
+    100%{
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+</style>
+
 </body>
 </html>

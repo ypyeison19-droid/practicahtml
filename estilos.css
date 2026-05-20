@@ -352,3 +352,68 @@ td {
 
     margin-bottom: 100px;
 }
+
+.degradado-lineal{
+
+    width: 500px;
+
+    height: 250px;
+
+    margin: 40px auto;
+
+    border: 5px solid black;
+
+    background: linear-gradient(
+        to right,
+        rgb(255, 0, 0),
+        yellow,
+        green,
+        blue
+    );
+}
+
+.degradado-dos-colores{
+
+    width: 500px;
+
+    height: 250px;
+
+    margin: 40px auto;
+
+    border: 5px solid black;
+
+    background: linear-gradient(
+        to top right,
+
+        red 30%,
+
+        blue 100%
+    );
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 80px;
+
+    font-family: Arial;
+}
+
+.degradado-personalizado{
+
+    width: 500px;
+    height: 250px;
+    margin: 40px auto;
+    border: 5px solid black;
+    background: linear-gradient(
+        200deg,
+        #0000ff 10%,
+        #ffc0cb 50%,
+        #73ff 75%
+    );
+
+    color: white;
+    text-align: center;
+    padding-top: 80px;
+
+}
