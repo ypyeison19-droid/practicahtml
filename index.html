@@ -5,6 +5,7 @@
     <title>Tablas HTML</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
 
     <h1><b>LISTA DE ESTUDIANTES</b></h1>
@@ -47,113 +48,142 @@
 
     <br><br>
 
-<!-- TABLA IZQUIERDA (TEXTO ARRIBA) -->
+<!-- TABLA IZQUIERDA -->
 <table align="left" cellpadding="5" cellspacing="2">
+
     <thead>
         <tr>
             <th colspan="3">PRODUCTOS TECNOLÓGICOS</th>
         </tr>
+
         <tr>
             <th>ID</th>
             <th>Producto</th>
             <th>Precio</th>
         </tr>
     </thead>
+
     <tbody>
+
         <tr valign="top">
             <td height="100">1</td>
             <td>Mouse Gamer RGB</td>
             <td>$80.000</td>
         </tr>
+
         <tr valign="top">
             <td height="100">2</td>
             <td>Teclado Mecánico</td>
             <td>$150.000</td>
         </tr>
+
         <tr valign="top">
             <td height="100">3</td>
             <td>Monitor 24"</td>
             <td>$700.000</td>
         </tr>
+
         <tr valign="top">
             <td height="100">4</td>
             <td>Audífonos</td>
             <td>$120.000</td>
         </tr>
+
     </tbody>
+
 </table>
 
-
-<!-- TABLA DERECHA (TEXTO ABAJO) -->
+<!-- TABLA DERECHA -->
 <table align="right" cellpadding="25" cellspacing="10">
+
     <thead>
+
         <tr>
             <th colspan="3">CIUDADES DE COLOMBIA</th>
         </tr>
+
         <tr>
             <th>Ciudad</th>
             <th>Población</th>
             <th>Región</th>
         </tr>
+
     </thead>
+
     <tbody>
+
         <tr valign="bottom">
             <td rowspan="2" height="100">Bogotá</td>
             <td>8M</td>
             <td>Cundinamarca</td>
         </tr>
+
         <tr valign="bottom">
             <td>Capital</td>
             <td>Centro</td>
         </tr>
+
         <tr valign="bottom">
             <td height="100">Medellín</td>
             <td>2.5M</td>
             <td>Antioquia</td>
         </tr>
+
         <tr valign="bottom">
             <td height="100">Cali</td>
             <td>2.2M</td>
             <td>Valle</td>
         </tr>
+
     </tbody>
+
 </table>
 
-<!-- TABLA CENTRO (TEXTO CENTRO) -->
+<!-- TABLA CENTRO -->
 <table align="center" cellpadding="15" cellspacing="6">
+
     <thead>
+
         <tr>
             <th colspan="3">CURSOS DE PROGRAMACIÓN</th>
         </tr>
+
         <tr>
             <th>Curso</th>
             <th>Duración</th>
             <th>Nivel</th>
         </tr>
+
     </thead>
+
     <tbody>
+
         <tr valign="middle">
             <td rowspan="2" height="100">HTML y CSS</td>
             <td>2 meses</td>
             <td>Básico</td>
         </tr>
+
         <tr valign="middle">
             <td>3 meses</td>
             <td>Intermedio</td>
         </tr>
+
         <tr valign="middle">
             <td height="100">JavaScript</td>
             <td>4 meses</td>
             <td>Avanzado</td>
         </tr>
+
         <tr valign="middle">
             <td height="100">MySQL</td>
             <td>2 meses</td>
             <td>Básico</td>
         </tr>
-    </tbody>
-</table>
 
+    </tbody>
+
+</table>
 
 <br><br><br><br><br><br><br><br><br><br>
 
@@ -166,11 +196,13 @@
     </thead>
 
     <tbody>
+
         <tr>
             <td align="center">
                 <img src="Captura de pantalla 2026-03-17 113048.png" width="300" height="200">
             </td>
         </tr>
+
     </tbody>
 
 </table>
@@ -196,24 +228,128 @@
 <div class="figura figura2"></div>
 <div class="figura figura3"></div>
 
-
 <div class="img1"></div>
 <div class="img2"></div>
 <div class="img3"></div>
 <div class="img4"></div>
 <div class="img5"></div>
-</body>
+
+<!-- COMPARACIÓN DE IMÁGENES -->
+
 <div class="contenedor-imagenes">
-<div class="comparacion">
 
+    <div class="comparacion">
 
-    
-  <div class="comparacion">
+        <div class="contain"></div>
 
-    <div class="contain"></div>
+        <div class="cover"></div>
 
-    <div class="cover"></div>
+    </div>
 
 </div>
 
+<!-- SCROLL -->
+
+<h1>FONDO SCROLL</h1>
+
+<div class="scroll">
+
+    <p>
+     El fondo se mueve junto con la página mientras el usuario hace scroll hacia abajo.
+    Este comportamiento es el predeterminado en CSS y permite que la imagen de fondo
+    se desplace al mismo tiempo que el contenido de la página.
+    </p>
+
+</div>
+
+<br><br>
+
+<!-- FIXED -->
+
+<h1>FONDO FIXED</h1>
+
+<div class="fixed">
+
+    <p>
+       <p>
+    El fondo queda quieto mientras haces scroll en la página.
+    Este efecto se logra con la propiedad 
+    <b>background-attachment: fixed;</b>
+    y crea una sensación visual elegante donde el contenido se mueve,
+    pero la imagen de fondo permanece fija en la pantalla.
+</p>
+    </p>
+
+</div>
+
+<br><br>
+
+<!-- LOCAL -->
+
+<h1>FONDO LOCAL</h1>
+
+<div class="local">
+<p>
+    El fondo local se mueve junto con el contenido interno del contenedor.
+    Este efecto funciona cuando el elemento tiene scroll interno activado
+    mediante la propiedad <b>overflow: scroll;</b>.
+</p>
+
+<p>
+    A diferencia de fixed, aquí el movimiento ocurre únicamente dentro
+    del div y no en toda la página.
+</p>
+
+<p>
+    HTML permite crear estructuras organizadas y CSS se encarga de
+    aplicar estilos visuales modernos y dinámicos.
+</p>
+
+<p>
+    La propiedad <b>background-attachment: local;</b> es útil para
+    crear contenedores interactivos con fondos desplazables.
+</p>
+
+<p>
+    Este ejemplo demuestra cómo combinar scroll interno,
+    imágenes de fondo y diseño visual.
+</p>
+
+<p>
+    También es posible agregar imágenes, tablas y animaciones
+    dentro del mismo contenedor.
+</p>
+
+<p>
+    CSS ofrece múltiples propiedades para personalizar fondos,
+    tamaños, posiciones y repeticiones de imágenes.
+</p>
+
+<p>
+    Practicar estos ejemplos ayuda a comprender mejor
+    el comportamiento visual de los elementos HTML.
+</p>
+
+<p>
+    Los fondos locales son utilizados en interfaces modernas,
+    tarjetas informativas y contenedores interactivos.
+</p>
+
+<p>
+    El contenido sigue desplazándose normalmente mientras
+    el fondo acompaña el movimiento interno del elemento.
+</p>
+
+<p>
+    Las propiedades scroll, fixed y local permiten crear
+    diferentes experiencias visuales para el usuario.
+</p>
+
+<p>
+    CSS y HTML son fundamentales para el desarrollo web moderno.
+</p>
+
+</div>
+
+</body>
 </html>
