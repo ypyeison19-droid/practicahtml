@@ -10,7 +10,7 @@ body {
         rgba(0,0,0,0.45)
     ),
 
-    url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1920&q=80)");
 
     background-size: cover;
 
@@ -1352,4 +1352,164 @@ td {
 
     text-shadow:
         1px 1px 2px rgba(255,255,255,.8);
+}
+
+/* =========================================
+   LOGIN OFICIAL ESTILO SENA
+   ========================================= */
+
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 40px 20px;
+}
+
+.tarjeta-login-sena {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    overflow: hidden; /* Para que el header verde respete los bordes redondos */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Franja Verde SENA en la parte superior */
+.sena-header {
+    background-color: #39A900; /* Verde Oficial SENA */
+    height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor flotante para el logo */
+.sena-logo-container {
+    position: absolute;
+    bottom: -40px; /* Hace que flote a la mitad de la franja */
+    width: 90px;
+    height: 90px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid #39A900;
+}
+
+.sena-logo-container img {
+    width: 75%;
+    height: 75%;
+    object-fit: contain;
+}
+
+/* Cuerpo del formulario */
+.sena-body {
+    padding: 60px 35px 35px 35px; /* Más espacio arriba por el logo flotante */
+    text-align: left;
+}
+
+.sena-body h2 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 8px 0;
+    background: none; /* Quitamos el fondo blanco de tus otros h1 */
+    width: auto;
+    padding: 0;
+}
+
+.sena-subtitulo {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Campos de texto */
+.grupo-input-sena {
+    margin-bottom: 22px;
+}
+
+.grupo-input-sena label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+.grupo-input-sena input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+/* Al dar clic en los inputs se iluminan en verde SENA */
+.grupo-input-sena input:focus {
+    outline: none;
+    border-color: #39A900;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(57, 169, 0, 0.25);
+}
+
+/* Botón de ingreso oficial */
+.boton-sena-login {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #39A900;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(57, 169, 0, 0.2);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.boton-sena-login:hover {
+    background: #2d8500; /* Verde más oscuro al pasar el mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(57, 169, 0, 0.3);
+}
+
+.boton-sena-login:active {
+    transform: translateY(1px);
+}
+
+/* Links inferiores */
+.sena-pie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.sena-pie a {
+    color: #39A900;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.sena-pie a:hover {
+    color: #2d8500;
+    text-decoration: underline;
+}
+
+.sena-pie .separador {
+    color: #ccc;
 }
