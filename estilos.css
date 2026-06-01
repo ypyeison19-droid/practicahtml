@@ -980,7 +980,7 @@ td {
     border-radius: 50%;
 
     background-image:
-    url("planeta.jpg");
+    url("mapaaaaa.jpg.png");
 
     background-size: cover;
 
@@ -1051,135 +1051,305 @@ td {
 }
 
 /* =======================
-   PIN 3D
+   PIN 3D METÓDICO Y EXACTO
 ======================= */
 
-.pin{
-
+.pin {
     position: absolute;
-
-    width: 220px;
-
+    width: 120px;
     height: 200px;
-
     top: 50%;
-
     left: 50%;
-
-    margin-left: -60px;
-
-    margin-top: -200px;
-
+    margin-left: -60px; /* Centrado perfecto */
+    margin-top: -200px; /* El pivote queda exactamente en la punta inferior */
     transform-style: preserve-3d;
-
-    transform:
-    rotateX(-90deg)
-    translateZ(10px);
-
+    
+    /* Control de la escena: Ajusta la rotación global aquí */
+    transform: rotateX(-75deg) rotateY(0deg); 
     transform-origin: bottom center;
 }
 
-/* CARAS */
-
-.face{
-
+/* Base común para todas las caras: todas nacen en el mismo centro */
+.face {
     position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
 
-/* FRENTE */
-
-.front{
-
+/* FRENTE: Triángulo apuntando hacia abajo */
+.front {
     width: 120px;
 
-    height: 200px;
+    background-image:
+        url("muñexopng.png"),
+        linear-gradient(
+            to bottom,
+            #fcd116 50%,
+            #003893 75%,
+            #ce1126 100%
+        );
 
-    background:
-    linear-gradient(
-        to bottom,
-        #fcd116 50%,
-        #003893 75%,
-        #ce1126 100%
-    );
+    background-repeat: no-repeat, no-repeat;
 
-    clip-path:
-    polygon(
-        0% 0%,
-        100% 0%,
-        50% 100%
-    );
+    background-position: center, center;
 
-    transform:
-    translateZ(15px);
+    background-size: 70%, cover;
+
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+
+    transform: translateZ(15px) rotateX(-4deg);
+    transform-origin: bottom center;
+}
+/* ATRÁS: Triángulo idéntico, empujado hacia atrás */
+.back {
+    width: 120px;
+    background: #151515;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    /* Se empuja hacia atrás en el eje Z y se voltea */
+    transform: rotateY(180deg) translateZ(15px) rotateX(-4deg);
+    transform-origin: bottom center;
+}
+
+/* LATERALES: Su ancho define el grosor total en Z (15px + 15px = 30px).
+   Nacen del centro exacto del pin (left: 45px) para tapar los costados de frente a atrás.
+*/
+
+/* =======================
+   CONTENEDORES DE IMAGEN
+======================= */
+
+.info-box{
+    position: absolute;
+
+    width: 180px;
+    height: 140px;
+
+    background: white;
+
+    border: 3px solid #35c2e5;
+    border-radius: 12px;
+
+    overflow: hidden;
 
     box-shadow:
-    0 0 30px rgba(255,120,0,0.5);
+        0 8px 20px rgba(0,0,0,.25);
+
+    z-index: 100;
 }
 
-/* ATRÁS */
-
-.back{
-
-    width: 120px;
-
-    height: 200px;
-
-    background: #222;
-
-    clip-path:
-    polygon(
-        0% 0%,
-        100% 0%,
-        50% 100%
-    );
-
-    transform:
-    rotateY(180deg)
-    translateZ(15px);
+.info-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* IZQUIERDA */
-
-.left{
-
-    width: 30px;
-
-    height: 200px;
-
-    background: #000000;
-
-    clip-path:
-    polygon(
-        0% 0%,
-        100% 0%,
-        50% 100%
-    );
-
-    left: -15px;
-
-    transform:
-    rotateY(-90deg);
+.info-left{
+    top: 30px;
+    left: -50px;
 }
 
 /* DERECHA */
+.info-right{
+    top: 30px;
+    right: -50px;
+}
 
-.right{
+/* =======================
+   CONTENEDOR BOTONES
+======================= */
 
-    width: 30px;
+.contenedor-botones{
 
-    height: 200px;
+    width: 100%;
 
-    background: #000000;
+    padding: 60px;
 
-    clip-path:
-    polygon(
-        0% 0%,
-        100% 0%,
-        50% 100%
-    );
+    display: flex;
 
-    right: -15px;
+    justify-content: center;
 
-    transform:
-    rotateY(90deg);
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    background: #f5f7f8;
+}
+
+/* =======================
+   BOTÓN SENA
+======================= */
+
+.boton-sena{
+
+    width: 220px;
+
+    height: 220px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+    border-top: 6px solid #39A900;
+
+    transition: all .15s ease;
+
+    user-select: none;
+
+    /* EFECTO LEVANTADO */
+
+    box-shadow:
+        0 8px 0 #2d8500,
+        0 15px 25px rgba(0,0,0,.20);
+}
+
+/* AL PASAR EL MOUSE */
+
+.boton-sena:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 11px 0 #2d8500,
+        0 20px 30px rgba(0,0,0,.25);
+}
+
+/* AL HACER CLIC */
+
+.boton-sena:active{
+
+    transform: translateY(8px) scale(.98);
+
+    box-shadow:
+        0 2px 0 #2d8500,
+        0 5px 10px rgba(0,0,0,.15);
+}
+
+/* IMAGEN */
+
+.boton-sena img{
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+/* TEXTO */
+
+.boton-sena span{
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #39A900;
+
+    text-align: center;
+}
+
+.boton-power{
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all .15s ease;
+
+    user-select: none;
+
+    /* Efecto elevado */
+
+    box-shadow:
+        0 10px 0 #2d8500,
+        0 20px 30px rgba(0,0,0,.25);
+
+    border: 8px solid #39A900;
+}
+
+/* Imagen */
+
+.boton-power img{
+
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+}
+
+/* Hover */
+
+.boton-power:hover{
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 14px 0 #2d8500,
+        0 25px 35px rgba(0,0,0,.30);
+}
+
+/* Presionado */
+
+.boton-power:active{
+
+    transform: translateY(8px);
+
+    box-shadow:
+        0 2px 0 #2d8500,
+        0 5px 10px rgba(0,0,0,.20);
+}
+
+
+
+.despedida{
+
+    text-align: center;
+
+    padding: 60px 60px;
+}
+
+.despedida h1{
+
+    font-size: 48px;
+
+    color: #39A900;
+
+    text-shadow:
+        2px 2px 4px rgba(0,0,0,.25),
+        0 0 15px rgba(57,169,0,.35);
+
+    margin-bottom: 15px;
+}
+
+.despedida p{
+
+    font-size: 22px;
+
+    color: #00ffb3;
+
+    text-shadow:
+        1px 1px 2px rgba(255,255,255,.8);
 }
