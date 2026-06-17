@@ -2054,4 +2054,77 @@ td {
     right: 0;
 }
 
+/* =======================================================
+   ESTILOS PARA EL MENÚ STICKY DESPLEGABLE
+   ======================================================= */
 
+/* Contenedor principal que se queda fijo arriba al hacer scroll */
+.contenedor-navegacion-sticky {
+  position: -webkit-sticky; /* Soporte para Safari */
+  position: sticky;
+  top: 0;
+  z-index: 10000; /* Asegura que flote por encima de las cartas y el juego */
+  background-color: #2c3e50; /* Fondo oscuro para la barra del botón */
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo del botón que activa el menú */
+.boton-activador-menu {
+  background-color: #34a844; /* El verde de tu proyecto */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Centra el botón perfectamente */
+  transition: background 0.2s ease;
+}
+
+.boton-activador-menu:hover {
+  background-color: #2b8c38; /* Verde más oscuro al pasar el mouse */
+}
+
+/* EL MENÚ INICIA OCULTO */
+.menu-sticky-oculto {
+  display: none; 
+  background-color: #34a844; /* Fondo verde para el despliegue */
+  margin-top: 10px;
+  padding: 15px 0;
+  border-radius: 4px;
+}
+
+/* CLASE CLAVE: Se activa cuando el JS le inyecta la palabra "mostrar" */
+.menu-sticky-oculto.mostrar {
+  display: block !important; /* Rompe el display:none anterior para obligarlo a aparecer */
+}
+
+/* Estilos de la lista de enlaces interna */
+.enlaces-nav-sticky {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 35px;
+  padding: 0;
+  margin: 0;
+}
+
+.enlaces-nav-sticky a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.enlaces-nav-sticky a:hover {
+  color: #e6ee21; /* Tu amarillo de enfoque */
+}
+
+/* Evita que el menú sticky tape tus títulos al usar los enlaces internos */
+[id] {
+  scroll-margin-top: 75px; 
+}
