@@ -739,6 +739,369 @@ animation: girar 5s linear infinite;
 </div>
 
 
+<h1>DISPLAY BLOCK</h1>
+
+<div class="block">Caja 1</div>
+<div class="block">Caja 2</div>
+<div class="block">Caja 3</div>
+
+<br><br>
+
+<h1>DISPLAY INLINE</h1>
+
+<div class="inline">Caja 1</div>
+<div class="inline">Caja 2</div>
+<div class="inline">Caja 3</div>
+
+<br><br>
+
+
+
+<h2>DISPLAY INLINE-BLOCK</h2>
+
+
+<div class="inline-block">Caja 1</div>
+<div class="inline-block">Caja 2</div>
+<div class="inline-block">Caja 3</div>
+
+<h1 class="sin-fondo">DISPLAY NONE</h1>
+
+<input type="checkbox" id="btn-none">
+
+<label for="btn-none" class="boton-demo">
+    Ocultar Caja 5
+</label>
+
+<div class="contenedor-none">
+
+    <div class="caja-ejemplo">1</div>
+    <div class="caja-ejemplo">2</div>
+    <div class="caja-ejemplo">3</div>
+
+    <div class="caja-ejemplo">4</div>
+    <div class="caja-ejemplo caja5-none">5</div>
+    <div class="caja-ejemplo">6</div>
+
+    <div class="caja-ejemplo">7</div>
+    <div class="caja-ejemplo">8</div>
+    <div class="caja-ejemplo">9</div>
+
+</div>
+
+<br><br>
+
+<h1 class="sin-fondo">VISIBILITY HIDDEN</h1>
+
+<input type="checkbox" id="btn-hidden">
+
+<label for="btn-hidden" class="boton-demo">
+    Ocultar Caja 5
+</label>
+
+<div class="contenedor-hidden">
+
+    <div class="caja-ejemplo">1</div>
+    <div class="caja-ejemplo">2</div>
+    <div class="caja-ejemplo">3</div>
+
+    <div class="caja-ejemplo">4</div>
+    <div class="caja-ejemplo caja5-hidden">5</div>
+    <div class="caja-ejemplo">6</div>
+
+    <div class="caja-ejemplo">7</div>
+    <div class="caja-ejemplo">8</div>
+    <div class="caja-ejemplo">9</div>
+
+</div>
+
+<h1 class="sin-fondo">EVENTOS CLICK Y DOBLE CLICK</h1>
+
+<p>
+    Click = display:none <br>
+    Doble click = visibility:hidden
+</p>
+
+<div class="contenedor-eventos">
+
+    <div class="caja-evento">1</div>
+    <div class="caja-evento">2</div>
+    <div class="caja-evento">3</div>
+
+    <div class="caja-evento">4</div>
+    <div class="caja-evento">5</div>
+    <div class="caja-evento">6</div>
+
+    <div class="caja-evento">7</div>
+    <div class="caja-evento">8</div>
+    <div class="caja-evento">9</div>
+
+</div>
+
+<section id="memory-game">
+
+    <h1>⚽ WORLD CUP MEMORY GAME ⚽</h1>
+
+    <div id="menu">
+
+        <button onclick="iniciarJuego(1)">
+            👤 1 JUGADOR
+        </button>
+
+        <button onclick="iniciarJuego(2)">
+            👥 2 JUGADORES
+        </button>
+
+    </div>
+
+    <div id="panel">
+
+        <h2 id="cronometro">⏱ Tiempo: 0 s</h2>
+
+        <h2 id="turno">
+            🎯 Turno: Jugador 1
+        </h2>
+
+        <div id="marcador">
+
+            <h3 id="jugador1">
+                👤 Jugador 1: 0
+            </h3>
+
+            <h3 id="jugador2">
+                👤 Jugador 2: 0
+            </h3>
+
+        </div>
+
+        <button onclick="reiniciarJuego()">
+            🔄 Reiniciar
+        </button>
+
+    </div>
+
+    <div class="tablero">
+
+        <!-- 24 cartas -->
+
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+        <div class="carta"></div>
+
+    </div>
+
+    <div id="ganador">
+
+        <h1>🏆 YOU WIN 🏆</h1>
+
+        <h2 id="resultado-final"></h2>
+
+        <button onclick="reiniciarJuego()">
+            🔄 Jugar otra vez
+        </button>
+
+    </div>
+
+</section>
+<script src="scri.js"></script>
+
+<script src="scri.js"></script>
+<script src="scri.js"></script>
+</body>
+
+
+<h1 class="sin-fondo">OVERFLOW CSS</h1>
+
+<div class="contenedor-overflow">
+
+    <!-- VISIBLE TEXTO -->
+
+    <div class="ejemplo">
+
+        <h2>VISIBLE TEXTO</h2>
+
+        <div class="caja visible-texto">
+
+           Apocalipsis 10:1-3
+«Vi descender del cielo a otro ángel fuerte, envuelto en una nube, con el arco iris sobre su cabeza; y su rostro era como el sol, y sus pies como columnas de fuego. Tenía en su mano un librito abierto; y puso su pie derecho sobre el mar, y el izquierdo sobre la tierra; y clamó a gran voz, como ruge un león; y cuando hubo clamado, siete truenos emitieron sus voces.»
+
+        </div>
+
+    </div>
+
+    <!-- HIDDEN TEXTO -->
+
+    <div class="ejemplo">
+
+        <h2>HIDDEN TEXTO</h2>
+
+        <div class="caja hidden-texto">
+
+            Apocalipsis 10:1-3
+«Vi descender del cielo a otro ángel fuerte, envuelto en una nube, con el arco iris sobre su cabeza; y su rostro era como el sol, y sus pies como columnas de fuego. Tenía en su mano un librito abierto; y puso su pie derecho sobre el mar, y el izquierdo sobre la tierra; y clamó a gran voz, como ruge un león; y cuando hubo clamado, siete truenos emitieron sus voces.»
+        </div>
+
+    </div>
+
+    <!-- SCROLL TEXTO -->
+
+    <div class="ejemplo">
+
+        <h2>SCROLL TEXTO</h2>
+
+        <div class="caja scroll-texto">
+
+           Apocalipsis 10:1-3
+«Vi descender del cielo a otro ángel fuerte, envuelto en una nube, con el arco iris sobre su cabeza; y su rostro era como el sol, y sus pies como columnas de fuego. Tenía en su mano un librito abierto; y puso su pie derecho sobre el mar, y el izquierdo sobre la tierra; y clamó a gran voz, como ruge un león; y cuando hubo clamado, siete truenos emitieron sus voces.»
+
+        </div>
+
+    </div>
+
+    <!-- AUTO TEXTO -->
+
+    <div class="ejemplo">
+
+        <h2>AUTO TEXTO</h2>
+
+        <div class="caja auto-texto">
+
+           Apocalipsis 10:1-3
+«Vi descender del cielo a otro ángel fuerte, envuelto en una nube, con el arco iris sobre su cabeza; y su rostro era como el sol, y sus pies como columnas de fuego. Tenía en su mano un librito abierto; y puso su pie derecho sobre el mar, y el izquierdo sobre la tierra; y clamó a gran voz, como ruge un león; y cuando hubo clamado, siete truenos emitieron sus voces.»
+        </div>
+
+    </div>
+
+</div>
+
+<hr>
+
+<div class="contenedor-overflow">
+
+    <!-- VISIBLE IMAGEN -->
+
+    <div class="ejemplo">
+
+        <h2>VISIBLE IMAGEN</h2>
+
+        <div class="caja visible-img">
+
+            <img src="angellll.png" alt="imagen">
+
+        </div>
+
+    </div>
+
+    <!-- HIDDEN IMAGEN -->
+
+    <div class="ejemplo">
+
+        <h2>HIDDEN IMAGEN</h2>
+
+        <div class="caja hidden-img">
+
+            <img src="angellll.png" alt="imagen">
+
+        </div>
+
+    </div>
+
+    <!-- SCROLL IMAGEN -->
+
+    <div class="ejemplo">
+
+        <h2>SCROLL IMAGEN</h2>
+
+        <div class="caja scroll-img">
+
+            <img src="angellll.png" alt="imagen">
+
+        </div>
+
+    </div>
+
+    <!-- AUTO IMAGEN -->
+
+    <div class="ejemplo">
+
+        <h2>AUTO IMAGEN</h2>
+
+        <div class="caja auto-img">
+
+            <img src="angellll.png" alt="imagen">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<section class="ejercicio-posicionamiento">
+    
+    <h2 class="ejercicio-titulo">Posicionamiento Relative y absolute</h2>
+
+    <div class="clase-padre-relativo">
+        
+        <div class="caja-absoluta box-rojo">
+            top: j0<br>left: 0
+        </div>
+
+        <div class="caja-absoluta box-naranja">
+            top: 0<br>right: 0
+        </div>
+
+        <div class="caja-absoluta box-cian">
+            center
+        </div>
+
+        <div class="caja-absoluta box-amarillo">
+            bottom: 0<br>left: 0
+        </div>
+
+        <div class="caja-absoluta box-verde">
+            bottom: 0<br>right: 0
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div class="bloque-articulo-flotante">
+  
+  <p>Aquí va el párrafo de texto que quieras que aparezca ANTES de la imagen.</p>
+  
+  <img src="tu-imagen-o-logo.png" alt="Descripción" class="img-al-lado">
+  
+  <p>Aquí va todo el texto largo que quieres que rodee y envuelva a la imagen por los lados y por abajo.</p>
+
+</div>
 
 
 </body>

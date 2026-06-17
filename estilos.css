@@ -1513,3 +1513,545 @@ td {
 .sena-pie .separador {
     color: #ccc;
 }
+
+
+
+/* DISPLAY BLOCK */
+
+.block{
+
+    display: block;
+
+    width: 200px;
+
+    padding: 20px;
+
+    margin: 10px auto;
+
+    background: #4dc7ff;
+
+    border: 2px solid black;
+
+    font-weight: bold;
+}
+
+
+/* DISPLAY INLINE */
+
+.inline{
+
+    display: inline;
+
+    background: #ffd700;
+
+    border: 2px solid black;
+
+    padding: 20px;
+
+    font-weight: bold;
+}
+
+
+/* DISPLAY INLINE-BLOCK */
+
+.inline-block{
+
+    display: inline-block;
+
+    width: 150px;
+
+    height: 100px;
+
+    margin: 10px;
+
+    background: #39A900;
+
+    border: 2px solid black;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    line-height: 100px;
+}
+
+
+/* BOTON */
+
+.boton-demo{
+
+    display:inline-block;
+
+    background:#39A900;
+
+    color:white;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    border:2px solid black;
+
+    cursor:pointer;
+
+    margin:15px;
+}
+
+#btn-none,
+#btn-hidden{
+
+    display:none;
+}
+
+
+/* CONTENEDORES */
+
+.contenedor-none,
+.contenedor-hidden{
+
+    width:400px;
+
+    margin:20px auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    justify-content:center;
+}
+
+
+/* CAJAS */
+
+.caja-ejemplo{
+
+    width:80px;
+
+    height:80px;
+
+    background:white;
+
+    border:3px solid black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    font-weight:bold;
+}
+
+
+/* DISPLAY NONE */
+
+#btn-none:checked ~ .contenedor-none .caja5-none{
+
+    display:none;
+}
+
+
+/* VISIBILITY HIDDEN */
+
+#btn-hidden:checked ~ .contenedor-hidden .caja5-hidden{
+
+    visibility:hidden;
+}
+
+
+/* EVENTOS CLICK Y DOBLE CLICK */
+
+.contenedor-eventos{
+
+    width:400px;
+
+    margin:30px auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    justify-content:center;
+}
+
+.caja-evento{
+
+    width:80px;
+
+    height:80px;
+
+    background:white;
+
+    border:3px solid black;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.caja-evento:hover{
+
+    transform:scale(1.05);
+}
+
+
+/* ========================= */
+/* WORLD CUP MEMORY GAME */
+/* ========================= */
+
+#memory-game{
+
+    text-align:center;
+
+    margin-top:30px;
+}
+
+#memory-game h1{
+
+    margin-bottom:20px;
+}
+
+#menu{
+
+    margin-bottom:20px;
+}
+
+#menu button,
+#panel button,
+#ganador button{
+
+    background:#39A900;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    margin:10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+}
+
+#menu button:hover,
+#panel button:hover,
+#ganador button:hover{
+
+    transform:scale(1.05);
+}
+
+#panel{
+
+    margin-bottom:20px;
+}
+
+#marcador{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    flex-wrap:wrap;
+}
+
+.tablero{
+
+    width:700px;
+
+    margin:20px auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:12px;
+}
+
+.carta{
+
+    width:100px;
+
+    height:100px;
+
+    border:3px solid black;
+
+    border-radius:12px;
+
+    background:#39A900;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:0.3s;
+
+    color:transparent;
+}
+
+.carta:hover{
+
+    transform:scale(1.05);
+}
+
+.carta.volteada{
+
+    background:white;
+
+    color:black;
+}
+
+.carta.acertada{
+
+    background:gold;
+
+    color:black;
+}
+
+#ganador{
+
+    display:none;
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:white;
+
+    padding:40px;
+
+    border:5px solid #39A900;
+
+    border-radius:20px;
+
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+
+    z-index:1000;
+}
+
+@media(max-width:768px){
+
+    .tablero{
+
+        width:95%;
+
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .carta{
+
+        width:70px;
+
+        height:70px;
+
+        font-size:30px;
+    }
+
+}
+
+/* ========================= */
+/* OVERFLOW */
+/* ========================= */
+
+.contenedor-overflow{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    margin:40px 0;
+}
+
+.ejemplo{
+
+    text-align:center;
+}
+
+.caja{
+
+    width:220px;
+
+    height:120px;
+
+    border:3px solid black;
+
+    padding:10px;
+
+    background:white;
+}
+
+/* TEXTO */
+
+.visible-texto{
+
+    overflow:visible;
+}
+
+.hidden-texto{
+
+    overflow:hidden;
+}
+
+.scroll-texto{
+
+    overflow:scroll;
+}
+
+.auto-texto{
+
+    overflow:auto;
+}
+
+/* IMAGENES */
+
+.visible-img{
+
+    overflow:visible;
+}
+
+.hidden-img{
+
+    overflow:hidden;
+}
+
+.scroll-img{
+
+    overflow:scroll;
+}
+
+.auto-img{
+
+    overflow:auto;
+}
+
+.visible-img img,
+.hidden-img img,
+.scroll-img img,
+.auto-img img{
+
+    width:400px;
+}
+
+/* ==========================================================================
+   SECCIÓN: EJERCICIO DE POSICIONAMIENTO (Pega esto al final de tu CSS)
+   ========================================================================== */
+
+/* Contenedor general de la sección (opcional para centrar el bloque en tu página) */
+.ejercicio-posicionamiento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+}
+
+.ejercicio-posicionamiento .ejercicio-titulo {
+    color: #333333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* EL PADRE REGULADOR: Mantiene a los hijos dentro de sus límites */
+.ejercicio-posicionamiento .clase-padre-relativo {
+    position: relative; /* OBLIGATORIO: Define el marco de referencia */
+    width: 100%;
+    max-width: 600px;   /* Se adapta si la pantalla es más pequeña */
+    height: 350px;
+    border: 3px dashed #333333; /* Línea discontinua gris/negra */
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* LAS CAJAS HIJAS: Estilos base para todos los bloques internos */
+.ejercicio-posicionamiento .caja-absoluta {
+    position: absolute; /* OBLIGATORIO: Permite moverlas libremente con top/bottom/left/right */
+    width: 130px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: monospace; /* Tipografía estilo código como la pantalla */
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #000000;
+    box-sizing: border-box;
+}
+
+/* UBICACIONES PRECISAS Y COLORES */
+
+.ejercicio-posicionamiento .box-rojo {
+    background-color: #d12400;
+    top: 0;
+    left: 0;
+}
+
+.ejercicio-posicionamiento .box-naranja {
+    background-color: #e67e22;
+    top: 0;
+    right: 0;
+}
+
+/* Centrado absoluto perfecto usando coordenadas + transform */
+.ejercicio-posicionamiento .box-cian {
+    background-color: #1abc9c;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.ejercicio-posicionamiento .box-amarillo {
+    background-color: #d4d700;
+    bottom: 0;
+    left: 0;
+}
+
+.ejercicio-posicionamiento .box-verde {
+    background-color: #2ecc71;
+    bottom: 0;
+    right: 0;
+}
+
+
