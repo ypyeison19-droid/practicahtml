@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Master</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="game-container">
+
+        <!-- ENCABEZADO -->
+
+        <div class="header">
+
+            <h1>🎮 CSS Pseudo Master</h1>
+
+            <p>
+                Aprende las pseudoclases jugando
+            </p>
+
+        </div>
+
+        <!-- ESTADISTICAS -->
+
+        <div class="stats">
+
+            <div class="stat-box">
+                Nivel:
+                <span id="nivel">
+                    1
+                </span>
+            </div>
+
+            <div class="stat-box">
+                Puntos:
+                <span id="score">
+                    0
+                </span>
+            </div>
+
+        </div>
+
+        <!-- BARRA DE PROGRESO -->
+
+        <div class="progress-container">
+
+            <div
+                id="progress-bar"
+                class="progress-bar">
+            </div>
+
+        </div>
+
+        <!-- PREGUNTA -->
+
+        <div class="question-card">
+
+            <h2 id="question">
+
+                Cargando pregunta...
+
+            </h2>
+
+        </div>
+
+        <!-- OPCIONES -->
+
+        <div
+            id="options"
+            class="options">
+
+        </div>
+
+        <!-- MENSAJE -->
+
+        <div
+            id="message"
+            class="message">
+
+        </div>
+
+        <!-- BOTON -->
+
+        <div class="button-container">
+
+            <button
+                id="nextBtn">
+
+                Siguiente Nivel
+
+            </button>
+
+        </div>
+
+        <!-- RESULTADO FINAL -->
+
+        <div
+            id="final-screen"
+            class="final-screen">
+
+            <h2>
+                🏆 Juego Completado
+            </h2>
+
+            <p id="final-score">
+
+            </p>
+
+            <h3 id="rank">
+
+            </h3>
+
+            <button
+                onclick="location.reload()">
+
+                Jugar Otra Vez
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <script src="jue.js"></script>
+
+</body>
+
+</html>

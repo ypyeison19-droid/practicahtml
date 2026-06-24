@@ -1,0 +1,361 @@
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+
+body{
+    min-height:100vh;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #334155
+    );
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+/* CONTENEDOR */
+
+.game-container{
+
+    width:100%;
+    max-width:1100px;
+
+    background:white;
+    color:#111827;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+}
+
+/* HEADER */
+
+.header{
+    text-align:center;
+}
+
+.header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.header p{
+    color:#6b7280;
+    font-size:1.1rem;
+}
+
+/* STATS */
+
+.stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+.stat-box{
+
+    flex:1;
+
+    text-align:center;
+
+    background:#f3f4f6;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+}
+
+/* PROGRESS */
+
+.progress-container{
+
+    width:100%;
+
+    height:20px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-top:30px;
+}
+
+.progress-bar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #22c55e,
+        #16a34a
+    );
+
+    transition:.5s;
+}
+
+/* TARJETA PREGUNTA */
+
+.question-card{
+
+    margin-top:30px;
+
+    background:#eff6ff;
+
+    border-left:6px solid #2563eb;
+
+    padding:25px;
+
+    border-radius:15px;
+}
+
+.question-card h2{
+    line-height:1.5;
+}
+
+/* OPCIONES */
+
+.options{
+
+    margin-top:30px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.option{
+
+    background:#f9fafb;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    font-size:1.2rem;
+
+    font-weight:bold;
+
+    border:3px solid transparent;
+
+    transition:.3s;
+}
+
+/* PSEUDOCLASE :hover */
+
+.option:hover{
+
+    transform:translateY(-8px);
+
+    background:#dbeafe;
+
+    border-color:#3b82f6;
+}
+
+/* PSEUDOCLASE :active */
+
+.option:active{
+
+    transform:scale(.95);
+}
+
+/* CORRECTA */
+
+.correct{
+
+    background:#22c55e !important;
+
+    color:white;
+}
+
+/* INCORRECTA */
+
+.wrong{
+
+    background:#ef4444 !important;
+
+    color:white;
+}
+
+/* MENSAJE */
+
+.message{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    font-size:1.3rem;
+
+    font-weight:bold;
+
+    min-height:40px;
+}
+
+/* BOTON */
+
+.button-container{
+
+    text-align:center;
+
+    margin-top:25px;
+}
+
+#nextBtn{
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    transition:.3s;
+}
+
+/* :hover */
+
+#nextBtn:hover{
+
+    transform:translateY(-3px);
+}
+
+/* :active */
+
+#nextBtn:active{
+
+    transform:scale(.95);
+}
+
+/* :focus */
+
+#nextBtn:focus{
+
+    outline:3px solid #60a5fa;
+}
+
+/* PANTALLA FINAL */
+
+.final-screen{
+
+    display:none;
+
+    text-align:center;
+
+    margin-top:40px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:#ecfdf5;
+}
+
+.final-screen h2{
+
+    color:#16a34a;
+
+    margin-bottom:20px;
+}
+
+.final-screen p{
+
+    font-size:1.4rem;
+
+    margin-bottom:15px;
+}
+
+.final-screen h3{
+
+    margin-bottom:20px;
+}
+
+.final-screen button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#22c55e;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.final-screen button:hover{
+
+    transform:translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .header h1{
+
+        font-size:2rem;
+    }
+
+    .stats{
+
+        flex-direction:column;
+    }
+
+}

@@ -1110,7 +1110,7 @@ animation: girar 5s linear infinite;
 
 </section>
 <header class="banner-superior">
-    <h1>Bienvenidos a mi Sitio Web</h1>
+    <h3>¿Qué has aprendido?</h3>
     <p>Este contenido se ocultará al hacer scroll hacia arriba.</p>
   </header>
 
@@ -1127,6 +1127,8 @@ animation: girar 5s linear infinite;
   </div>
 
   <script src="scri.js"></script>
+
+
 <section class="demo-pseudoclases">
 
     <div class="demo-box hover-demo">
@@ -1154,7 +1156,327 @@ animation: girar 5s linear infinite;
         <button>Navega con TAB</button>
     </div>
 
+<section class="demo-ubicacion">
+
+    <div class="demo-box any-link-demo">
+        <h3>:any-link</h3>
+        <a href="https://www.google.com">Enlace 1</a><br><br>
+        <a href="https://www.github.com">Enlace 2</a>
+    </div>
+
+    <div class="demo-box link-demo">
+        <h3>:link</h3>
+        <a href="https://www.wikipedia.org">
+            Enlace no visitado
+        </a>
+    </div>
+
+    <div class="demo-box visited-demo">
+        <h3>:visited</h3>
+        <a href="https://www.youtube.com">
+            Visita este enlace y vuelve
+        </a>
+    </div>
+
+    <div class="demo-box target-demo">
+        <h3>:target</h3>
+
+        <a href="#objetivo">
+            Mostrar objetivo
+        </a>
+
+        <div id="objetivo" class="objetivo">
+            ¡Soy el elemento target!
+        </div>
+    </div>
+
+
+
+    <section class="demo-idioma">
+
+    <div class="demo-box lang-demo">
+        <h3>:lang()</h3>
+
+        <p lang="es">
+            Hola, este texto está en español.
+        </p>
+
+        <p lang="en">
+            Hello, this text is in English.
+        </p>
+    </div>
+
+    <div class="demo-box dir-demo">
+        <h3>:dir()</h3>
+
+        <p dir="ltr">
+            Texto de izquierda a derecha (LTR)
+        </p>
+
+        <p dir="rtl">
+            مرحبا هذا نص من اليمين إلى اليسار
+        </p>
+    </div>
+
+<h3 class="sin-fondo">TRADUCTOR MULTILENGUAJE</h3>
+
+   <section class="translator-section">
+
+    <div class="translator-card">
+
+        <h2>🌎 Traductor Multilenguaje</h2>
+
+        <p class="subtitle">
+            Escribe un texto en español y tradúcelo automáticamente.
+        </p>
+
+        <textarea
+            id="texto"
+            placeholder="Escribe aquí tu texto..."
+        ></textarea>
+
+        <button onclick="traducirTexto()">
+            Traducir
+        </button>
+
+        <div class="translations">
+
+            <div class="language-card">
+                <h3>🇺🇸 Inglés</h3>
+                <p id="ingles">Esperando traducción...</p>
+            </div>
+
+            <div class="language-card">
+                <h3>🇫🇷 Francés</h3>
+                <p id="frances">Esperando traducción...</p>
+            </div>
+
+            <div class="language-card">
+                <h3>🇵🇹 Portugués</h3>
+                <p id="portugues">Esperando traducción...</p>
+            </div>
+
+            <div class="language-card arabic-card">
+                <h3>🇸🇦 Árabe</h3>
+
+                <p id="arabe" dir="rtl">
+                    Esperando traducción...
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
+    </div>
+
+</section>
+
+</section>
+
+</section>
+
+</section>
+<section class="par-impar-section">
+
+    <div class="par-impar-card">
+
+        <h2>Pseudoclases :nth-child()</h2>
+
+        <p class="descripcion">
+            Los elementos impares tendrán un color y los pares otro diferente.
+        </p>
+
+        <ul class="lista-par-impar">
+
+            <li>Elemento 1 (Impar)</li>
+            <li>Elemento 2 (Par)</li>
+            <li>Elemento 3 (Impar)</li>
+            <li>Elemento 4 (Par)</li>
+            <li>Elemento 5 (Impar)</li>
+            <li>Elemento 6 (Par)</li>
+            <li>Elemento 7 (Impar)</li>
+            <li>Elemento 8 (Par)</li>
+            <li>Elemento 9 (Impar)</li>
+            <li>Elemento 10 (Par)</li>
+
+        </ul>
+
+    </div>
+<div class="child-card nth-of-demo">
+
+    <h2>:nth-child(A of B)</h2>
+
+    <p class="descripcion">
+        Se selecciona el segundo elemento con la clase destacado.
+    </p>
+
+    <ul class="lista-avanzada">
+
+        <li class="destacado">Elemento destacado 1</li>
+        <li>Elemento normal</li>
+        <li class="destacado">Elemento destacado 2</li>
+        <li>Elemento normal</li>
+        <li class="destacado">Elemento destacado 3</li>
+        <li>Elemento normal</li>
+
+    </ul>
+
+</div>
+</section>
+
+
+
+<section id="game">
+
+    <div class="header">
+
+        <h1>🎯 CSS Pseudoclass Challenge</h1>
+
+        <div class="score">
+            Puntos:
+            <span id="score">
+                0
+            </span>
+        </div>
+
+    </div>
+
+    <div class="question-box">
+
+        <h2 id="nivel">
+            Nivel 1
+        </h2>
+
+        <h3 id="pregunta">
+            ¿Cuál elemento selecciona :first-child?
+        </h3>
+
+    </div>
+
+    <div id="opciones" class="options">
+
+    </div>
+
+    <button id="nextBtn">
+        Siguiente Nivel
+    </button>
+
+</section>
+
+
+<div class="contenedor-radios">
+  <h3>Selecciona tu lenguaje favorito:</h3>
+  
+  <div class="opcion">
+    <input type="radio" id="html" name="lenguaje">
+    <label for="html">HTML</label>
+  </div>
+
+  <div class="opcion">
+    <input type="radio" id="css" name="lenguaje">
+    <label for="css">CSS</label>
+  </div>
+
+  <div class="opcion">
+    <input type="radio" id="js" name="lenguaje">
+    <label for="js">JavaScript</label>
+  </div>
+  
+  <p class="alerta-estado">Por favor, selecciona una opción.</p>
+</div>
+
+<style>
+  .contenedor-radios {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    max-width: 350px;
+    margin: 20px auto;
+    background-color: #fff;
+  }
+
+  .opcion {
+    margin: 10px 0;
+  }
+
+  /* 1. ESTADO INDETERMINADO (Al inicio, cuando nadie ha votado) */
+  /* Pintamos el texto de las etiquetas de gris/azul para indicar que está pendiente */
+  input[type="radio"]:indeterminate + label {
+    color: #555;
+    font-style: italic;
+  }
+
+  /* Mostramos el mensaje de alerta solo si el grupo está indeterminado */
+  input[type="radio"]:indeterminate ~ .alerta-estado {
+    display: block;
+    color: #e74c3c; /* Rojo */
+    font-weight: bold;
+  }
+
+  /* 2. ESTADO SELECCIONADO (Cuando el usuario ya eligió uno) */
+  /* Pintamos de azul y negrita únicamente la opción que el usuario marcó */
+  input[type="radio"]:checked + label {
+    color: blue;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  /* Ocultamos la alerta por defecto (cuando ya se seleccionó algo, el ~ .alerta-estado ya no se ve afectado por :indeterminate) */
+  .alerta-estado {
+    display: none;
+    margin-top: 15px;
+    font-size: 0.9em;
+  }
+</style>
+
+
+<div class="contenedor-select">
+  <label for="frutas">Selecciona una fruta:</label>
+  
+  <select id="frutas" name="frutas">
+    <option value="manzana">Manzana</option>
+    <option value="pera">Pera</option>
+    <option value="banano">Banano</option>
+  </select>
+</div>
+
+<style>
+  /* Contenedor principal */
+  .contenedor-select {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f6f7;
+    border-radius: 6px;
+    max-width: 300px;
+    margin: 20px auto;
+    border: 1px solid #ccd1d1;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #95a5a6;
+  }
+
+  /* === EL CODIGO DE LA DIAPOSITIVA === */
+  select option:checked {
+    font-weight: bold;
+    background-color: lightyellow; /* Resalta la opción elegida al abrir la lista */
+    color: #333;
+  }
+</style>
+
+
 
 </body>
 </html>

@@ -215,3 +215,170 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+
+async function traducirTexto(){
+
+    const texto =
+    document.getElementById("texto").value.trim();
+
+    if(texto === ""){
+        alert("Escribe un texto primero");
+        return;
+    }
+
+    try{
+
+        document.getElementById("ingles").textContent =
+        "Traduciendo...";
+
+        document.getElementById("frances").textContent =
+        "Traduciendo...";
+
+        document.getElementById("portugues").textContent =
+        "Traduciendo...";
+
+        document.getElementById("arabe").textContent =
+        "جاري الترجمة...";
+
+        const [en, fr, pt, ar] =
+        await Promise.all([
+
+            fetch(
+            `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=es|en`
+            ),
+
+            fetch(
+            `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=es|fr`
+            ),
+
+            fetch(
+            `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=es|pt`
+            ),
+
+            fetch(
+            `https://api.mymemory.translated.net/get?q=${encodeURIComponent(texto)}&langpair=es|ar`
+            )
+
+        ]);
+
+        const datosEn = await en.json();
+        const datosFr = await fr.json();
+        const datosPt = await pt.json();
+        const datosAr = await ar.json();
+
+        document.getElementById("ingles").textContent =
+        datosEn.responseData.translatedText;
+
+        document.getElementById("frances").textContent =
+        datosFr.responseData.translatedText;
+
+        document.getElementById("portugues").textContent =
+        datosPt.responseData.translatedText;
+
+        document.getElementById("arabe").textContent =
+        datosAr.responseData.translatedText;
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        document.getElementById("ingles").textContent =
+        "Error";
+
+        document.getElementById("frances").textContent =
+        "Error";
+
+        document.getElementById("portugues").textContent =
+        "Error";
+
+        document.getElementById("arabe").textContent =
+        "خطأ";
+
+        alert("No fue posible realizar la traducción.");
+
+    }
+
+}
+
+const levels = [
+
+{
+nivel:1,
+pregunta:"¿Cuál elemento selecciona :first-child?",
+correcta:0,
+opciones:[
+"🍏",
+"🍎",
+"🍌"
+]
+},
+
+{
+nivel:2,
+pregunta:"¿Cuál elemento selecciona :last-child?",
+correcta:2,
+opciones:[
+"🍏",
+"🍎",
+"🍌"
+]
+},
+
+{
+nivel:3,
+pregunta:"¿Cuál elemento selecciona :nth-child(2)?",
+correcta:1,
+opciones:[
+"🍏",
+"🍎",
+"🍌"
+]
+},
+
+{
+nivel:4,
+pregunta:"¿Qué elementos son pares?",
+correcta:1,
+opciones:[
+"1,3,5",
+"2,4,6",
+"1,2,3"
+]
+},
+
+{
+nivel:5,
+pregunta:"¿Cuál es el primer <p> usando :first-of-type?",
+correcta:0,
+opciones:[
+"Párrafo 1",
+"Párrafo 2",
+"Párrafo 3"
+]
+},
+
+{
+nivel:6,
+pregunta:"¿Qué texto coincide con :lang(en)?",
+correcta:1,
+opciones:[
+"Hola",
+"Hello",
+"Bonjour"
+]
+},
+
+{
+nivel:7,
+pregunta:"¿Qué elemento coincide con :dir(rtl)?",
+correcta:2,
+opciones:[
+"Hola",
+"Hello",
+"مرحبا"
+]
+}
+
+];

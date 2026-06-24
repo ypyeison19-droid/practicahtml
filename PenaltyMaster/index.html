@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Penalty Master</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<!-- =================================== -->
+<!-- INICIO -->
+<!-- =================================== -->
+
+<section id="pantallaInicio" class="pantalla activa">
+
+    <div class="contenedor">
+
+        <h1>⚽ Penalty Master</h1>
+
+        <p>
+            Aprende pseudoclases CSS jugando fútbol
+        </p>
+
+        <button id="btnIniciar">
+            JUGAR
+        </button>
+
+    </div>
+
+</section>
+
+<!-- =================================== -->
+<!-- EQUIPOS -->
+<!-- =================================== -->
+
+<section id="pantallaEquipos" class="pantalla">
+
+    <h2>Selecciona tu equipo</h2>
+
+    <div class="equipos">
+
+        <label class="equipo-card">
+
+            <input type="radio"
+                   name="equipo"
+                   value="colombia">
+
+            🇨🇴 Colombia
+
+        </label>
+
+        <label class="equipo-card">
+
+            <input type="radio"
+                   name="equipo"
+                   value="brasil">
+
+            🇧🇷 Brasil
+
+        </label>
+
+        <label class="equipo-card">
+
+            <input type="radio"
+                   name="equipo"
+                   value="argentina">
+
+            🇦🇷 Argentina
+
+        </label>
+
+        <label class="equipo-card">
+
+            <input type="radio"
+                   name="equipo"
+                   value="francia">
+
+            🇫🇷 Francia
+
+        </label>
+
+        <label class="equipo-card">
+
+            <input type="radio"
+                   name="equipo"
+                   value="españa">
+
+            🇪🇸 España
+
+        </label>
+
+    </div>
+
+    <button id="btnEquipo">
+        Continuar
+    </button>
+
+</section>
+
+<!-- =================================== -->
+<!-- JUGADORES -->
+<!-- =================================== -->
+
+<section id="pantallaJugadores" class="pantalla">
+
+    <h2>Registro de Jugadores</h2>
+
+    <div class="configuracion">
+
+        <label>
+
+            Cantidad de jugadores
+
+            <select id="cantidadJugadores">
+
+                <option value="3">3</option>
+
+                <option value="5">5</option>
+
+                <option value="7">7</option>
+
+                <option value="11">11</option>
+
+            </select>
+
+        </label>
+
+        <button id="crearFormulario">
+
+            Crear Jugadores
+
+        </button>
+
+    </div>
+
+    <div id="formJugadores">
+
+        <!-- Se crea automáticamente -->
+
+    </div>
+
+    <button id="guardarJugadores">
+
+        Guardar Equipo
+
+    </button>
+
+</section>
+
+<!-- =================================== -->
+<!-- FORMACION -->
+<!-- =================================== -->
+
+<section id="pantallaFormacion" class="pantalla">
+
+    <h2>⚽ Formación del Equipo</h2>
+
+    <p>
+        Los jugadores se crearán automáticamente
+    </p>
+
+    <div id="equipoGenerado">
+
+    </div>
+
+    <button id="btnPenales">
+
+        Iniciar Penales
+
+    </button>
+
+</section>
+
+<!-- =================================== -->
+<!-- PENALES -->
+<!-- =================================== -->
+
+<section id="pantallaPenales" class="pantalla">
+
+    <h2>🥅 Tanda de Penales</h2>
+
+    <div id="marcador">
+
+        <span>⚽ Goles: 0</span>
+
+        <span>🥅 Atajadas: 0</span>
+
+    </div>
+
+    <div id="jugadorActual">
+
+        Jugador Actual
+
+    </div>
+
+    <div class="cancha">
+
+        <div class="porteria">
+
+            🥅
+
+        </div>
+
+    </div>
+
+    <div class="direcciones">
+
+        <button class="direccion"
+                data-dir="izquierda">
+
+            ⬅️
+
+        </button>
+
+        <button class="direccion"
+                data-dir="centro">
+
+            ⬆️
+
+        </button>
+
+        <button class="direccion"
+                data-dir="derecha">
+
+            ➡️
+
+        </button>
+
+    </div>
+
+    <div id="resultadoPenal">
+
+    </div>
+
+</section>
+
+<!-- =================================== -->
+<!-- RESULTADOS -->
+<!-- =================================== -->
+
+<section id="pantallaResultado" class="pantalla">
+
+    <h2>🏆 Resultado Final</h2>
+
+    <div id="estadisticas">
+
+        <p>Partido Finalizado</p>
+
+    </div>
+
+    <button id="reiniciar">
+
+        Jugar Nuevamente
+
+    </button>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
