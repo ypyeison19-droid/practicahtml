@@ -382,3 +382,57 @@ opciones:[
 }
 
 ];
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const inputTexto = document.getElementById("texto-usuario");
+  const botonEnviar = document.getElementById("boton-enviar");
+  const contadorCantidad = document.getElementById("cantidad");
+
+  // Escuchamos lo que el usuario escribe en tiempo real
+  inputTexto.addEventListener("input", () => {
+    const longitudTexto = inputTexto.value.length;
+
+    // Actualizamos el contador visual en la pantalla
+    contadorCantidad.textContent = longitudTexto;
+
+    // Si la longitud es mayor o igual a 10, deshabilitado = false (se habilita)
+    if (longitudTexto >= 10) {
+      botonEnviar.disabled = false;
+    } else {
+      botonEnviar.disabled = true;
+    }
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const nombreInput = document.getElementById("nombre-usuario");
+  const rolInput = document.getElementById("rol-usuario");
+  const btnGuardar = document.getElementById("btn-guardar");
+  const btnSalir = document.getElementById("btn-salir");
+
+  // Función que evalúa la suma de caracteres en ambos inputs
+  function validarFormulario() {
+    const caracteresNombre = nombreInput.value.length;
+    const caracteresRol = rolInput.value.length;
+    const totalCaracteres = caracteresNombre + caracteresRol;
+
+    // Habilita si la suma de letras en ambos campos es mayor o igual a 10
+    if (totalCaracteres >= 10) {
+      btnGuardar.disabled = false;
+    } else {
+      btnGuardar.disabled = true;
+    }
+  }
+
+  // Escuchamos el evento en ambos inputs al mismo tiempo
+  nombreInput.addEventListener("input", validarFormulario);
+  rolInput.addEventListener("input", validarFormulario);
+
+  // Acción simple opcional para el botón Salir
+  btnSalir.addEventListener("click", () => {
+    alert("Has salido de la edición de perfil.");
+  });
+});

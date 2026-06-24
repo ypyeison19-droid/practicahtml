@@ -1476,6 +1476,36 @@ animation: girar 5s linear infinite;
   }
 </style>
 
+<div class="contenedor-validacion">
+  <label for="texto-usuario">Ingresa al menos 10 caracteres:</label>
+  <input type="text" id="texto-usuario" placeholder="Escribe algo aquí...">
+  
+  <button id="boton-enviar" disabled>Enviar datos</button>
+  
+  <p class="contador">Caracteres: <span id="cantidad">0</span>/10</p>
+</div>
+
+
+
+<div class="contenedor-perfil">
+  <h2>Editar Perfil</h2>
+  
+  <div class="campo-grupo">
+    <label for="nombre-usuario">Nombre completo:</label>
+    <input type="text" id="nombre-usuario" placeholder="Ej. Juan Pérez">
+  </div>
+
+  <div class="campo-grupo">
+    <label for="rol-usuario">Especialidad / Rol:</label>
+    <input type="text" id="rol-usuario" placeholder="Ej. Desarrollador ADSO">
+  </div>
+  
+  <div class="botones-grupo">
+    <button id="btn-salir" class="btn-secundario">Salir</button>
+    <button id="btn-guardar" class="btn-primario" disabled>Guardar</button>
+  </div>
+</div>
+
 
 
 </body>

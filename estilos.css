@@ -2582,3 +2582,155 @@ p:dir(ltr){
     background:#ef4444;
     color:white;
 }
+
+.contenedor-validacion {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* === ESTADO DEL BOTÓN HABILITADO (POR DEFECTO) === */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db; /* Azul */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* === PSEUDOCLASE :disabled (Cuando le falten caracteres) === */
+button:disabled {
+  background-color: #bdc3c7; /* Gris claro */
+  color: #7f8c8d;
+  cursor: not-allowed; /* Cambia el cursor a un símbolo de prohibido */
+}
+
+.contador {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 8px;
+  text-align: right;
+}
+
+
+/* Contenedor tipo tarjeta para el perfil */
+.contenedor-perfil {
+  font-family: Arial, sans-serif;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  max-width: 400px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 22px;
+}
+
+.campo-grupo {
+  margin-bottom: 18px;
+}
+
+.campo-grupo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+}
+
+.campo-grupo input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+/* Enfoque azul cuando el usuario hace clic en el input */
+.campo-grupo input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* === ALINEACIÓN DE LOS BOTONES === */
+.botones-grupo {
+  display: flex;
+  gap: 12px; /* Espacio de separación entre los dos botones */
+  margin-top: 25px;
+}
+
+/* Estilos base compartidos por ambos botones */
+.botones-grupo button {
+  flex: 1; /* Hace que ambos botones midan exactamente lo mismo de ancho */
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Botón Guardar (Primario - Azul) */
+.btn-primario {
+  background-color: #2ecc71; /* Verde para guardar con éxito */
+  color: white;
+}
+
+.btn-primario:hover:not(:disabled) {
+  background-color: #27ae60;
+}
+
+/* Botón Salir (Secundario - Gris/Bordeado) */
+.btn-secundario {
+  background-color: #f5f5f5;
+  color: #555;
+  border: 1px solid #ccc !important;
+}
+
+.btn-secundario:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* === ESTADO DESHABILITADO PARA EL BOTÓN GUARDAR === */
+.btn-primario:disabled {
+  background-color: #bdc3c7; /* Gris */
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
