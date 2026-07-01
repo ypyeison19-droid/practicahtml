@@ -436,3 +436,36 @@ document.addEventListener("DOMContentLoaded", () => {
     alert("Has salido de la edición de perfil.");
   });
 });
+
+
+// 1. Función para MOSTRAR el modal (La que llama el botón con onclick)
+function abrirModal() {
+    const modal = document.getElementById('miModal');
+    if (modal) {
+        modal.classList.add('activo');
+    }
+}
+
+// 2. Función para OCULTAR el modal
+function cerrarModal() {
+    const modal = document.getElementById('miModal');
+    if (modal) {
+        modal.classList.remove('activo');
+    }
+}
+
+// 3. Acción para el botón "Salir" (Solo se ejecuta si existe en tu HTML)
+const btnSalir = document.getElementById('btnSalir'); // Asegúrate de que tu botón salir tenga id="btnSalir"
+if (btnSalir) {
+    btnSalir.addEventListener("click", () => {
+        cerrarModal(); 
+    });
+}
+
+// 4. Cerrar el modal si el usuario hace clic fuera de la caja flotante
+window.onclick = function(event) {
+    const modal = document.getElementById('miModal');
+    if (event.target === modal) {
+        cerrarModal();
+    }
+};

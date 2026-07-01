@@ -2734,3 +2734,614 @@ h2 {
   color: #7f8c8d;
   cursor: not-allowed;
 }
+
+
+.caja-decorada {
+  border: 2px solid #333;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* --- ESTILOS BASE PARA TODAS LAS CAJAS --- 
+   Reemplazamos los bordes negros toscos por un diseño de cristal limpio */
+.caja-decorada, .caja-capitular, .caja-primera-linea, .caja-seleccion {
+  background: rgba(255, 255, 255, 0.06); /* Fondo sutil translúcido */
+  backdrop-filter: blur(8px);           /* Desenfoque de fondo moderno */
+  border: 1px solid rgba(255, 255, 255, 0.12); /* Borde fino y elegante */
+  border-radius: 12px;                  /* Esquinas redondeadas */
+  padding: 20px;
+  margin-bottom: 20px;                  /* Separación entre cada div */
+  max-width: 550px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f3f4f6;                       /* Texto claro para que sea legible en fondo oscuro */
+  line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =======================================================
+   1. CAJA DECORADA: Pseudo-elementos ::before y ::after
+   ======================================================= */
+.caja-decorada::before {
+  content: "🚀 ¡Inicio! → ";
+  color: #38bdf8; /* Azul neón vibrante */
+  font-weight: bold;
+}
+.caja-decorada::after {
+  content: " → ¡Fin! 🏁";
+  color: #4ade80; /* Verde menta brillante */
+  font-weight: bold;
+}
+
+/* =======================================================
+   2. CAJA CAPITULAR: Pseudo-elemento ::first-letter
+   ======================================================= */
+.caja-capitular::first-letter {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ff4757; /* Rojo coral */
+  float: left;
+  margin-right: 12px;
+  line-height: 0.85;
+  margin-top: 4px;
+  text-shadow: 0 4px 12px rgba(255, 71, 87, 0.4); /* Pequeño brillo */
+}
+
+/* =======================================================
+   3. CAJA PRIMERA LÍNEA: Pseudo-elemento ::first-line
+   ======================================================= */
+.caja-primera-linea {
+  max-width: 420px; /* Ajustado para forzar el salto de línea y notar el efecto */
+}
+.caja-primera-linea::first-line {
+  color: #a855f7; /* Morado eléctrico */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =======================================================
+   4. CAJA SELECCIÓN: Pseudo-clase/elemento ::selection
+   ======================================================= */
+.caja-seleccion::selection {
+  background-color: #00f5d4; /* Fondo cian brillante al arrastrar el mouse */
+  color: #0f172a;            /* Texto oscuro para que contraste perfectamente */
+}
+
+/* --- ESTILOS BASE COMPARTIDOS --- */
+.caja-marcador, .caja-backdrop {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  max-width: 550px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f3f4f6;
+  line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =======================================================
+   5. CAJA MARCADOR: Pseudo-elemento ::marker
+   ======================================================= */
+.caja-marcador h3 {
+  margin-top: 0;
+  color: #38bdf8; /* Azul brillante para el título */
+}
+
+.caja-marcador ul {
+  padding-left: 20px;
+}
+
+.caja-marcador li {
+  margin-bottom: 10px;
+}
+
+/* El truco: ::marker cambia el punto por defecto de la lista (•) */
+.caja-marcador li::marker {
+  content: "⚡ "; /* Puedes usar emojis, números o texto */
+  color: #eab308; /* Color amarillo oro */
+  font-size: 1.2rem;
+}
+
+
+/* =======================================================
+   6. CAJA BACKDROP-FILTER: Efecto de Vidrio Esmerilado
+   ======================================================= */
+/* Para que se note el "backdrop" (lo que está atrás), creamos un contenedor 
+   con un gradiente de fondo muy vivo */
+.caja-backdrop {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6); /* Fondo rosa a morado */
+  padding: 30px; /* Espacio para que el fondo sobresalga */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Esta es la verdadera caja que aplica el filtro a lo que tiene detrás */
+.cristal-cyberpunk {
+  background: rgba(15, 23, 42, 0.4); /* Fondo oscuro muy translúcido */
+  
+  /* AQUÍ ESTÁ LA MAGIA: */
+  backdrop-filter: blur(12px) saturate(160%); 
+  -webkit-backdrop-filter: blur(12px) saturate(160%); /* Soporte para Safari */
+  
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cristal-cyberpunk h4 {
+  margin-top: 0;
+  color: #00f5d4; /* Texto cian */
+}
+
+/* --- CAJA DE CONTROL (Igual al diseño de las anteriores) --- */
+.caja-modal-control {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  max-width: 550px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f3f4f6;
+  line-height: 1.6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.caja-modal-control h3 {
+  margin-top: 0;
+  color: #a855f7; /* Morado para identificar este módulo */
+}
+
+/* Botón estilizado para abrir el modal */
+.btn-abrir {
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-abrir:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+}
+
+
+/* =======================================================
+   ESTILOS DEL MODAL (Capa oscura de fondo)
+   ======================================================= */
+.modal-overlay {
+  position: fixed; /* Se fija en toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6); /* Fondo oscuro semitransparente */
+  
+  /* Aplicamos backdrop-filter para congelar/desenfocar la web de fondo */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  display: flex;         /* Centra la caja interna perfectamente */
+  justify-content: center;
+  align-items: center;
+  
+  opacity: 0;            /* Oculto por defecto mediante opacidad */
+  pointer-events: none;  /* Evita que se pueda clickear mientras esté oculto */
+  transition: opacity 0.3s ease; /* Transición suave de aparición */
+  z-index: 9999;         /* Asegura que esté por encima de absolutamente todo */
+}
+
+/* Cuando el modal tiene la clase 'activo' se muestra */
+.modal-overlay.activo {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- LA CAJA FLOTANTE DEL MODAL --- */
+.modal-contenido {
+  background: #1e1e2f; /* Fondo sólido oscuro para contrastar con el desenfoque */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f3f4f6;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: scale(0.8); /* Empieza un poco más pequeño para el efecto de animación */
+  transition: transform 0.3s ease;
+}
+
+/* Animación de agrandado cuando se activa */
+.modal-overlay.activo .modal-contenido {
+  transform: scale(1);
+}
+
+/* Botón de cerrar (X) */
+.btn-cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.btn-cerrar:hover {
+  color: #ff4757;
+}
+
+/* Botón de acción interno */
+.btn-accion {
+  background: #00f5d4;
+  color: #0f172a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+
+/* --- ESTILOS COMPARTIDOS PARA AMBAS TARJETAS --- */
+.tarjeta-tarea, .tarjeta-perfil {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;                  /* Bordes suaves como en la pantalla */
+  padding: 25px;
+  margin-bottom: 20px;
+  max-width: 550px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f3f4f6;
+  position: relative;                   /* Necesario para posicionar el #1 y #2 absolutamente */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Títulos principales (Tarea importante / Mi perfil) */
+.tarjeta-tarea h2, .tarjeta-perfil h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Indicadores de número (#1 y #2) en la esquina superior derecha */
+.numero-id {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #64748b;                       /* Gris azulado sutil */
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS: TARJETA #1 (TAREA)
+   ========================================== */
+.badge-prioridad {
+  display: inline-flex;                 /* Alinea el emoji y el texto en línea */
+  align-items: center;
+  gap: 8px;                             /* Espacio entre el emoji y el texto */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 20px;                  /* Forma de píldora/badge */
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.icono-alerta {
+  font-size: 1rem;
+}
+
+/* ==========================================
+   ESTILOS ESPECÍFICOS: TARJETA #2 (PERFIL)
+   ========================================== */
+.usuario-info {
+  display: flex;                        /* Alinea la foto y el @usuario de lado */
+  align-items: center;
+  gap: 12px;
+}
+
+/* Foto de perfil redonda */
+.avatar-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;                   /* Hace la imagen completamente redonda */
+  object-fit: cover;                    /* Evita que la foto se distorsione o aplaste */
+  border: 2px solid rgba(255, 255, 255, 0.4); /* Borde sutil a la foto */
+}
+
+/* Texto del @usuario */
+.username {
+  font-size: 1.05rem;
+  color: #94a3b8;                       /* Un tono un poco más suave que el blanco */
+  font-weight: 500;
+}
+
+
+/* =======================================================
+   CONTENEDOR ENCAPSULADO (No afecta al resto de la web)
+   ======================================================= */
+.dashboard-premium {
+  display: grid;
+  grid-template-columns: 200px 450px; /* Tamaños fijos para que no estiren tu layout horizontal */
+  width: 650px;                       /* Ancho cerrado para que actúe como un bloque más */
+  height: 480px;                      /* Alto controlado */
+  background: rgba(15, 23, 42, 0.5);  /* Mantiene tu fondo oscuro visible abajo */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  counter-reset: bloques-premium;     /* Contador inteligente aislado */
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f8fafc;
+  
+  /* Ajuste para layouts horizontales */
+  display: inline-grid;               /* Evita romper bloques contiguos en línea */
+  margin: 0 20px;                     /* Separación con tus otras tarjetas */
+  vertical-align: top;
+}
+
+/* =======================================================
+   BARRA LATERAL AISLADA
+   ======================================================= */
+.sidebar-premium {
+  background: rgba(15, 23, 42, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-icon {
+  width: 10px;
+  height: 10px;
+  background: #00f5d4;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00f5d4;
+}
+.brand h2 {
+  font-size: 1rem;
+  margin: 0;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-item {
+  color: #94a3b8;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.nav-item:hover, .nav-item.activa {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* =======================================================
+   REJILLA DE CONTENIDO INTERNO
+   ======================================================= */
+.grid-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;             /* En lugar de grid masivo, usamos flex vertical interno */
+  gap: 12px;
+  overflow-y: auto;                   /* Si el contenido crece, hace scroll SOLO dentro del dashboard */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Tarjetas Bento del Dashboard */
+.tarjeta-bento {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 15px;
+  position: relative;
+}
+
+/* Autonumeración sin romper selectores externos */
+.tarjeta-bento::before {
+  counter-increment: bloques-premium;
+  content: "0" counter(bloques-premium);
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.tarjeta-bento h3 {
+  margin: 0 0 10px 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+}
+
+/* Elementos de interactividad interna */
+.status-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+.pulso-online {
+  width: 8px;
+  height: 8px;
+  background-color: #00f5d4;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+.pulso-online::after {
+  content: ""; position: absolute; width: 100%; height: 100%;
+  background: inherit; border-radius: inherit;
+  animation: pulsar-dash 2s infinite; top: 0; left: 0;
+}
+@keyframes pulsar-dash {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Todo List Interno */
+.todo-list { display: flex; flex-direction: column; gap: 6px; }
+.todo-item { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.85rem; }
+.todo-item input { display: none; }
+.custom-check {
+  width: 16px; height: 16px; border: 2px solid #475569; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+}
+.todo-item input:checked + .custom-check { background: #00f5d4; border-color: #00f5d4; }
+.todo-item input:checked + .custom-check::after { content: "✓"; color: #0f172a; font-size: 0.75rem; font-weight: bold; }
+.todo-item input:checked ~ p { text-decoration: line-through; color: #475569; margin: 0; }
+.todo-item p { margin: 0; }
+
+/* Grupo de Avatares */
+.grupo-usuarios { display: flex; gap: 10px; }
+.usuario-avatar { position: relative; width: 35px; height: 35px; }
+.usuario-avatar img { width: 100%; height: 100%; border-radius: 8px; object-fit: cover; }
+.usuario-avatar::after {
+  content: ""; position: absolute; bottom: -1px; right: -1px;
+  width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #0f172a;
+}
+.usuario-avatar.online::after { background: #00f5d4; }
+
+/* Estilo base para los elementos de la lista */
+.lista-premium li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  cursor: help; /* Cambia el cursor a un signo de pregunta */
+  transition: color 0.2s;
+}
+
+/* Cambiamos el color al pasar el mouse */
+.lista-premium li:hover {
+  color: #00f5d4; /* Color neón */
+}
+
+/* AQUÍ ESTÁ LA MAGIA DE ATR() */
+/* Creamos un bloque vacío DESPUÉS del texto que solo se muestra en :hover */
+.lista-premium li:hover::after {
+  /* 1. Captura el valor de 'data-tecnologia' del HTML y lo usa como contenido */
+  content: " ➔ Enfoque: [ " attr(data-tecnologia) " ]"; 
+  
+  /* 2. Estilos para que se vea como una etiqueta de código */
+  color: #f472b6; /* Rosa vibrante */
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding-left: 8px;
+  animation: aparecerSutil 0.2s ease forwards;
+}
+
+/* Animación sutil de entrada para el texto dinámico */
+@keyframes aparecerSutil {
+  from { opacity: 0; transform: translateX(-5px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+
+/* --- CONTENEDOR INDEPENDIENTE --- */
+.tarjeta-ortografia-aislada {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 30px;
+  width: 450px;                       /* Ancho fijo para mantener la simetría en el eje X */
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f8fafc;
+  
+  /* ALINEACIÓN HORIZONTAL */
+  display: inline-block;              
+  vertical-align: top;
+  margin: 0 20px;                     /* Separación con los bloques de los lados */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.tarjeta-ortografia-aislada h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  color: #38bdf8;                     /* Azul brillante neón */
+  letter-spacing: 0.5px;
+}
+
+/* --- TU TARGET TEXT CON ATTR() --- */
+.tarjeta-ortografia-aislada .target-text {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+
+.tarjeta-ortografia-aislada .target-text::before {
+  content: attr(data-subtitulo) " ➔ ";
+  color: #a855f7;                     /* Púrpura neón */
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* --- ÁREA DE ESCRITURA ESTILIZADA --- */
+.caja-editor-libre {
+  background: rgba(15, 23, 42, 0.6);  /* Fondo oscuro profundo */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 18px;
+  min-height: 100px;
+  outline: none;                      /* Quita el borde amarillo/azul por defecto del navegador */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Estado Focus: Cuando el usuario hace clic para escribir */
+.caja-editor-libre:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+/* =======================================================
+   MÁGIA DE CSS: EL PSEUDO-ELEMENTO DE ORTOGRAFÍA
+   ======================================================= */
+.caja-editor-libre::spelling-error {
+  color: #ff4757;                             /* Cambia el texto detectado a rojo coral */
+  background-color: rgba(255, 71, 87, 0.12);  /* Resaltado sutil de fondo */
+  text-decoration: underline wavy #ff4757;    /* Reemplaza la línea ondulada nativa por una neón */
+}
