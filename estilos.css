@@ -426,7 +426,7 @@ td {
         200deg,
         #0000ff 10%,
         #ffc0cb 50%,
-        #73ff 75%
+        rgb(116, 47, 255) 75%
     );
 
     color: white;
@@ -3995,4 +3995,73 @@ article{
 
 }
 
+}
+
+/* ==========================================
+   1. ESTILOS BASE (Para todos los ejercicios)
+   ========================================== */
+.contenedor-flex-ejercicio {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    background-color: #fafafa;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: fit-content;
+}
+
+.imagen-gatito {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0; /* Evita que se deformen los gatitos */
+}
+
+
+/* ==========================================
+   2. EJERCICIO 1: DIRECCIONES (flex-direction)
+   ========================================== */
+.direccion-row {
+    flex-direction: row;
+}
+
+.direccion-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.direccion-column {
+    flex-direction: column;
+}
+
+.direccion-column-reverse {
+    flex-direction: column-reverse;
+}
+
+/* Layout para poner las dos columnas lado a lado */
+.bloque-columnas {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* ==========================================
+   3. EJERCICIO 2: ENVOLVER (flex-wrap)
+   ========================================== */
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+/* Forzamos un ancho máximo en los de wrap para ver el salto de línea */
+.no-wrap, .wrap, .wrap-reverse {
+    max-width: 360px; 
 }
