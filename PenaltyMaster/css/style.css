@@ -403,8 +403,8 @@ input:invalid{
 
     transform:translateX(-50%);
 
-    width:320px;
-    height:120px;
+    width:450px;
+    height:170px;
 
 }
 
@@ -535,8 +535,8 @@ input:invalid{
 
     position:absolute;
 
-    width:90px;
-    height:110px;
+    width:120px;
+    height:150px;
 
     left:50%;
     bottom:-5px;
@@ -547,5 +547,104 @@ input:invalid{
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
+
+}
+
+/* ===================================================
+   SPRITES DEL JUEGO
+=================================================== */
+
+/* Jugador */
+
+.jugador{
+    position:absolute;
+    width:110px;
+    height:180px;
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+    background:url("../assets/jugadores/jugador.png") center/contain no-repeat;
+    z-index:3;
+}
+
+/* Balón */
+
+.balon{
+    position:absolute;
+    width:35px;
+    height:35px;
+    left:50%;
+    bottom:170px;
+    transform:translateX(-50%);
+    background:url("../assets/balones/balon.png") center/contain no-repeat;
+    z-index:4;
+}
+
+/* Portero */
+
+.arquero{
+    position:absolute;
+    width:90px;
+    height:120px;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    background:url("../assets/porteros/portero.png") center/contain no-repeat;
+    z-index:5;
+}
+
+/*====================================================
+ ZONAS DE DISPARO
+====================================================*/
+
+.zonas-tiro{
+
+    position:absolute;
+
+    inset:0;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    grid-template-rows:repeat(3,1fr);
+
+    z-index:20;
+
+}
+
+.zona{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+}
+
+.zona::after{
+
+    content:"";
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:50%;
+
+    background:red;
+
+    transition:.3s;
+
+}
+
+.zona:hover::after{
+
+    transform:scale(1.5);
+
+    background:yellow;
 
 }

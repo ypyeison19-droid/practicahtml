@@ -477,3 +477,44 @@ document
 
 }
 );
+
+// ======================================
+// ZONAS DE DISPARO
+// ======================================
+
+const balon = document.getElementById("balon");
+
+const zonas = document.querySelectorAll(".zona");
+
+zonas.forEach(zona=>{
+
+    zona.addEventListener("click",()=>{
+
+        moverBalon(
+            zona.dataset.x,
+            zona.dataset.y
+        );
+
+    });
+
+});
+
+// ======================================
+// MOVER BALÓN
+// ======================================
+
+function moverBalon(x,y){
+
+    balon.style.transition =
+    "all .8s ease";
+
+    balon.style.left = x + "%";
+
+    balon.style.top = y + "%";
+
+    balon.style.bottom = "auto";
+
+    balon.style.transform =
+    "translate(-50%,-50%) scale(.5)";
+
+}

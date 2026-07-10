@@ -3073,275 +3073,926 @@ h2 {
 }
 
 
-/* =======================================================
-   CONTENEDOR ENCAPSULADO (No afecta al resto de la web)
-   ======================================================= */
+/* =======================================================================
+   1. CONTENEDOR ENCAPSULADO DEL DASHBOARD (BLOQUE 1)
+   ======================================================================= */
 .dashboard-premium {
   display: grid;
-  grid-template-columns: 200px 450px; /* Tamaños fijos para que no estiren tu layout horizontal */
-  width: 650px;                       /* Ancho cerrado para que actúe como un bloque más */
-  height: 480px;                      /* Alto controlado */
-  background: rgba(15, 23, 42, 0.5);  /* Mantiene tu fondo oscuro visible abajo */
+  grid-template-columns: 200px 450px; /* Ancho fijo para barra y contenido */
+  width: 650px;                       /* Ancho total controlado para tu pasarela */
+  height: 480px;                      /* Alto adaptado */
+  background: rgba(15, 23, 42, 0.4);  /* Cristal translúcido oscuro */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  counter-reset: bloques-premium;     /* Contador inteligente aislado */
+  counter-reset: bloques-premium;     /* Inicializa contador automático */
   font-family: 'Segoe UI', system-ui, sans-serif;
   color: #f8fafc;
   
-  /* Ajuste para layouts horizontales */
-  display: inline-grid;               /* Evita romper bloques contiguos en línea */
-  margin: 0 20px;                     /* Separación con tus otras tarjetas */
+  /* Sintonía con tu flujo horizontal */
+  display: inline-grid;               
   vertical-align: top;
+  flex-shrink: 0;                     /* Evita que Flexbox lo aplaste */
+  margin: 0 25px;
+  box-sizing: border-box;
 }
 
-/* =======================================================
-   BARRA LATERAL AISLADA
-   ======================================================= */
+/* --- BARRA LATERAL DEL DASHBOARD --- */
 .sidebar-premium {
   background: rgba(15, 23, 42, 0.3);
   border-right: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 20px;
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.brand { display: flex; align-items: center; gap: 8px; }
+.logo-icon { width: 10px; height: 10px; background: #00f5d4; border-radius: 50%; box-shadow: 0 0 10px #00f5d4; }
+.brand h2 { font-size: 1rem; margin: 0; color: #fff; letter-spacing: 0.5px; }
+.nav-links { display: flex; flex-direction: column; gap: 6px; }
+.nav-item { color: #94a3b8; text-decoration: none; padding: 10px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; transition: background 0.2s; }
+.nav-item:hover, .nav-item.activa { background: rgba(255, 255, 255, 0.05); color: #fff; }
+.nav-item.activa { border-left: 2px solid #00f5d4; }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.logo-icon {
-  width: 10px;
-  height: 10px;
-  background: #00f5d4;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #00f5d4;
-}
-.brand h2 {
-  font-size: 1rem;
-  margin: 0;
-  color: #fff;
-}
-
-.nav-links {
+/* --- REJILLA INTERNA DE CONTENIDO (SCROLL VERTICAL INTERNO) --- */
+.grid-content {
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-}
-.nav-item {
-  color: #94a3b8;
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: background 0.2s;
-}
-.nav-item:hover, .nav-item.activa {
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-}
-
-/* =======================================================
-   REJILLA DE CONTENIDO INTERNO
-   ======================================================= */
-.grid-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;             /* En lugar de grid masivo, usamos flex vertical interno */
-  gap: 12px;
-  overflow-y: auto;                   /* Si el contenido crece, hace scroll SOLO dentro del dashboard */
+  gap: 15px;
+  overflow-y: auto;                   /* Permite scroll si el contenido desborda dentro del dash */
   height: 100%;
   box-sizing: border-box;
 }
 
-/* Tarjetas Bento del Dashboard */
+/* Estilo común de las minitarjetas Bento */
 .tarjeta-bento {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  padding: 15px;
+  border-radius: 14px;
+  padding: 18px;
   position: relative;
 }
 
-/* Autonumeración sin romper selectores externos */
+/* El truco del Contador automático por CSS */
 .tarjeta-bento::before {
   counter-increment: bloques-premium;
   content: "0" counter(bloques-premium);
   position: absolute;
-  top: 12px;
-  right: 15px;
+  top: 15px;
+  right: 18px;
   font-family: monospace;
   font-size: 0.8rem;
   color: #475569;
+  font-weight: bold;
 }
+.tarjeta-bento h3 { margin: 0 0 12px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; }
 
-.tarjeta-bento h3 {
-  margin: 0 0 10px 0;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #94a3b8;
-}
+/* --- COMPONENTE INTERNO: PULSO DINÁMICO --- */
+.status-wrapper { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+.status-wrapper p { margin: 0; }
+.pulso-online { width: 8px; height: 8px; background-color: #00f5d4; border-radius: 50%; position: relative; display: inline-block; }
+.pulso-online::after { content: ""; position: absolute; width: 100%; height: 100%; background: inherit; border-radius: inherit; animation: pulsar-dash 2s infinite; top: 0; left: 0; }
+@keyframes pulsar-dash { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(2.5); opacity: 0; } }
 
-/* Elementos de interactividad interna */
-.status-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.85rem;
-}
-.pulso-online {
-  width: 8px;
-  height: 8px;
-  background-color: #00f5d4;
-  border-radius: 50%;
-  position: relative;
-  display: inline-block;
-}
-.pulso-online::after {
-  content: ""; position: absolute; width: 100%; height: 100%;
-  background: inherit; border-radius: inherit;
-  animation: pulsar-dash 2s infinite; top: 0; left: 0;
-}
-@keyframes pulsar-dash {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(2.5); opacity: 0; }
-}
-
-/* Todo List Interno */
+/* --- COMPONENTE INTERNO: INTERACTIVIDAD TODO-LIST (:checked) --- */
 .todo-list { display: flex; flex-direction: column; gap: 6px; }
 .todo-item { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.85rem; }
 .todo-item input { display: none; }
-.custom-check {
-  width: 16px; height: 16px; border: 2px solid #475569; border-radius: 4px;
-  display: flex; align-items: center; justify-content: center; transition: all 0.2s;
-}
+.custom-check { width: 16px; height: 16px; border: 2px solid #475569; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
 .todo-item input:checked + .custom-check { background: #00f5d4; border-color: #00f5d4; }
 .todo-item input:checked + .custom-check::after { content: "✓"; color: #0f172a; font-size: 0.75rem; font-weight: bold; }
-.todo-item input:checked ~ p { text-decoration: line-through; color: #475569; margin: 0; }
-.todo-item p { margin: 0; }
+.todo-item input:checked ~ p { text-decoration: line-through; color: #475569; }
+.todo-item p { margin: 0; transition: color 0.2s; }
 
-/* Grupo de Avatares */
+/* --- COMPONENTE INTERNO: AVATARES DE EQUIPO --- */
 .grupo-usuarios { display: flex; gap: 10px; }
 .usuario-avatar { position: relative; width: 35px; height: 35px; }
 .usuario-avatar img { width: 100%; height: 100%; border-radius: 8px; object-fit: cover; }
-.usuario-avatar::after {
-  content: ""; position: absolute; bottom: -1px; right: -1px;
-  width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #0f172a;
-}
+.usuario-avatar::after { content: ""; position: absolute; bottom: -1px; right: -1px; width: 8px; height: 8px; border-radius: 50%; border: 1.5px solid #1e293b; }
 .usuario-avatar.online::after { background: #00f5d4; }
+.usuario-avatar.offline::after { background: #ef4444; }
 
-/* Estilo base para los elementos de la lista */
-.lista-premium li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 15px;
+/* --- COMPONENTE INTERNO: HOVER EFECTO CON ATTR() --- */
+.lista-premium { padding: 0; margin: 0; list-style: none; }
+.lista-premium li { position: relative; padding-left: 15px; margin-bottom: 10px; font-size: 0.85rem; cursor: help; transition: color 0.2s; }
+.lista-premium li:hover { color: #00f5d4; }
+.lista-premium li::before { content: "•"; position: absolute; left: 0; color: #a855f7; font-weight: bold; }
+.lista-premium li:hover::after { content: " ➔ [ " attr(data-tecnologia) " ]"; color: #f472b6; font-family: monospace; font-size: 0.75rem; font-weight: bold; padding-left: 5px; animation: aparecerSutil 0.2s ease forwards; }
+
+
+/* =======================================================================
+   2. ESTILOS COMPARTIDOS PARA LOS NUEVOS BLOQUES INDEPENDIENTES (2 Y 3)
+   ======================================================================= */
+.tarjeta-ortografia-aislada, 
+.tarjeta-atributos-avanzados {
+  display: inline-block;              /* Los clava en la línea horizontal */
+  vertical-align: top;
+  flex-shrink: 0;
+  width: 420px;                       /* Ancho simétrico */
+  height: 480px;                      /* Mismo alto que el dashboard para alineación perfecta */
+  margin: 0 25px;
+  padding: 35px 30px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #f8fafc;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =======================================================
+   3. INTERIOR - TARJETA DE ORTOGRAFÍA (BLOQUE 2)
+   ======================================================= */
+.tarjeta-ortografia-aislada h3 { margin: 0 0 10px 0; font-size: 1.25rem; color: #38bdf8; letter-spacing: 0.5px; }
+
+.caja-editor-libre {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 18px;
+  min-height: 180px;                  /* Altura cómoda para escribir */
+  outline: none;                      /* Borra el borde nativo azul */
   font-size: 0.95rem;
-  cursor: help; /* Cambia el cursor a un signo de pregunta */
-  transition: color 0.2s;
+  line-height: 1.6;
+  color: #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.caja-editor-libre:focus { border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.25); }
+
+/* TRUCO: Modificación del marcador de error ortográfico */
+.caja-editor-libre::spelling-error {
+  color: #ff4757;
+  background-color: rgba(255, 71, 87, 0.12);
+  text-decoration: underline wavy #ff4757; /* Onda neón */
 }
 
-/* Cambiamos el color al pasar el mouse */
-.lista-premium li:hover {
-  color: #00f5d4; /* Color neón */
-}
 
-/* AQUÍ ESTÁ LA MAGIA DE ATR() */
-/* Creamos un bloque vacío DESPUÉS del texto que solo se muestra en :hover */
-.lista-premium li:hover::after {
-  /* 1. Captura el valor de 'data-tecnologia' del HTML y lo usa como contenido */
-  content: " ➔ Enfoque: [ " attr(data-tecnologia) " ]"; 
-  
-  /* 2. Estilos para que se vea como una etiqueta de código */
-  color: #f472b6; /* Rosa vibrante */
-  font-family: monospace;
+/* =======================================================
+   4. INTERIOR - SELECTORES DE ATRIBUTO (BLOQUE 3)
+   ======================================================= */
+.tarjeta-atributos-avanzados h3 { margin: 0 0 10px 0; font-size: 1.25rem; color: #00f5d4; }
+
+.lista-enlaces { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+.lista-enlaces a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.25s ease;
+}
+.lista-enlaces a:hover { background: rgba(255, 255, 255, 0.08); transform: translateX(6px); }
+
+/* TRUCOS: Los tres selectores avanzados específicos */
+.lista-enlaces a[href^="mailto:"] { border-left: 3px solid #38bdf8; }
+.lista-enlaces a[href^="mailto:"]::before { content: "📩"; }
+
+.lista-enlaces a[href$=".html"] { border-left: 3px solid #a855f7; }
+.lista-enlaces a[href$=".html"]::before { content: "📄"; }
+
+.lista-enlaces a[title*="capítulo"] { border-left: 3px solid #ff4757; }
+.lista-enlaces a[title*="capítulo"]::before { content: "⚡"; }
+
+
+/* =======================================================
+   5. COMPONENTE COMÚN: TARGET TEXT GENERAL
+   ======================================================= */
+.target-text {
   font-size: 0.85rem;
+  color: #94a3b8;
+  margin: 0 0 18px 0;
+  line-height: 1.4;
+}
+/* Inserta el subtítulo dinámico que viene del HTML mediante attr() */
+.target-text::before {
+  content: attr(data-subtitulo) " ➔ ";
+  color: #a855f7;
   font-weight: bold;
-  padding-left: 8px;
-  animation: aparecerSutil 0.2s ease forwards;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
-/* Animación sutil de entrada para el texto dinámico */
+/* Animación sutil compartida */
 @keyframes aparecerSutil {
   from { opacity: 0; transform: translateX(-5px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
 
-/* --- CONTENEDOR INDEPENDIENTE --- */
-.tarjeta-ortografia-aislada {
+/* --- CONTENEDOR DE LA TARJETA --- */
+.tarjeta-presentacion-personaje {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 24px;
   padding: 30px;
-  width: 450px;                       /* Ancho fijo para mantener la simetría en el eje X */
+  display: block;                     /* Se posiciona abajo de los demás bloques */
+  width: 100%;
+  max-width: 550px;                   /* Ancho ideal para tarjetas de personaje */
   box-sizing: border-box;
   font-family: 'Segoe UI', system-ui, sans-serif;
   color: #f8fafc;
-  
-  /* ALINEACIÓN HORIZONTAL */
-  display: inline-block;              
-  vertical-align: top;
-  margin: 0 20px;                     /* Separación con los bloques de los lados */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;                /* Separación si metes más bloques abajo */
 }
 
-.tarjeta-ortografia-aislada h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.25rem;
-  color: #38bdf8;                     /* Azul brillante neón */
+/* --- DISEÑO DEL ENCABEZADO (FLEXBOX) --- */
+.header-personaje {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ff4757;          /* Borde rosa/coral como los colores de Angie */
+  box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
+  flex-shrink: 0;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.info-principal h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.6rem;
+  color: #fff;
   letter-spacing: 0.5px;
 }
 
-/* --- TU TARGET TEXT CON ATTR() --- */
-.tarjeta-ortografia-aislada .target-text {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  margin: 0 0 20px 0;
-  line-height: 1.4;
+/* --- SEPARADOR ESTILIZADO --- */
+.separador-premium {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,71,87,0.5), rgba(255,255,255,0.05));
+  margin: 25px 0;
 }
 
-.tarjeta-ortografia-aislada .target-text::before {
-  content: attr(data-subtitulo) " ➔ ";
-  color: #a855f7;                     /* Púrpura neón */
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 0.8rem;
+/* --- BLOQUE DE ENLACES --- */
+.contacto-personaje h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.1rem;
+  color: #38bdf8;
 }
 
-/* --- ÁREA DE ESCRITURA ESTILIZADA --- */
-.caja-editor-libre {
-  background: rgba(15, 23, 42, 0.6);  /* Fondo oscuro profundo */
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 18px;
-  min-height: 100px;
-  outline: none;                      /* Quita el borde amarillo/azul por defecto del navegador */
-  font-size: 0.95rem;
-  line-height: 1.6;
+.contacto-personaje a {
   color: #e2e8f0;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
 }
 
-/* Estado Focus: Cuando el usuario hace clic para escribir */
-.caja-editor-libre:focus {
-  border-color: #38bdf8;
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+.contacto-personaje a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(6px);
 }
 
 /* =======================================================
-   MÁGIA DE CSS: EL PSEUDO-ELEMENTO DE ORTOGRAFÍA
+   APLICACIÓN DE SELECTORES AVANZADOS DE ATRIBUTO
    ======================================================= */
-.caja-editor-libre::spelling-error {
-  color: #ff4757;                             /* Cambia el texto detectado a rojo coral */
-  background-color: rgba(255, 71, 87, 0.12);  /* Resaltado sutil de fondo */
-  text-decoration: underline wavy #ff4757;    /* Reemplaza la línea ondulada nativa por una neón */
+
+/* 1. ^= Caza el link si arranca por mailto: (Correo de Angie) */
+.contacto-personaje a[href^="mailto:"] {
+  border-left: 3px solid #ff4757;    /* Rosa Coral */
+}
+.contacto-personaje a[href^="mailto:"]::before {
+  content: "🐠";                      /* Icono de pez */
+}
+
+/* 2. $= Caza el link si termina en .html (Archivo local) */
+.contacto-personaje a[href$=".html"] {
+  border-left: 3px solid #00f5d4;    /* Turquesa */
+}
+.contacto-personaje a[href$=".html"]::before {
+  content: "🌊";                      /* Icono de ola */
+}
+
+/* 3. *= Caza el link si el atributo 'title' contiene la palabra 'capítulo' */
+.contacto-personaje a[title*="capítulo"] {
+  border-left: 3px solid #a855f7;    /* Púrpura */
+}
+.contacto-personaje a[title*="capítulo"]::before {
+  content: "🎬";                      /* Icono de claqueta de cine */
+}
+
+
+body{
+    margin:0;
+    color:#f2f2f2;
+    font-family:Arial;
+}
+
+.contenedor-botones{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+    padding:50px;
+
+}
+
+.btn{
+
+    cursor:pointer;
+    transition:.3s;
+}
+
+
+/*==============================
+  EJERCICIO BOTONES (AISLADO)
+==============================*/
+
+.ejercicio-botones{
+
+    width:100%;
+    margin-top:40px;
+    padding:30px;
+
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.titulo-ejercicio{
+
+    color:#38bdf8;
+    text-align:center;
+    margin-bottom:35px;
+
+}
+
+.ejercicio-botones .contenedor-botones{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+.ejercicio-botones .btn-pseudo{
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+/*====================
+LOVE
+====================*/
+
+.btn-love{
+
+    width:220px;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+}
+
+.icono-pseudo{
+
+    background:white;
+
+    color:#ff4d6d;
+
+    text-align:center;
+
+    padding:18px;
+
+    font-size:28px;
+
+}
+
+.btn-love .texto-pseudo{
+
+    background:#38bdf8;
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+}
+
+.btn-love:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/*====================
+NORMAL
+====================*/
+
+.btn-normal{
+
+    padding:18px 35px;
+
+    background:#38bdf8;
+
+    color:white;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 0 #0ea5e9;
+
+}
+
+.btn-normal:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.btn-normal:active{
+
+    transform:translateY(5px);
+
+    box-shadow:none;
+
+}
+
+/*====================
+HOVER
+====================*/
+
+.btn-hover{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:18px 35px;
+
+    border-radius:10px;
+
+    color:white;
+
+    background:#38bdf8;
+
+}
+
+.btn-hover::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    width:0;
+
+    background:#0ea5e9;
+
+    transition:.4s;
+
+}
+
+.btn-hover:hover::before{
+
+    width:100%;
+
+}
+
+.btn-hover{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.btn-hover::after{
+
+    content:"Click me!";
+
+    position:absolute;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+/*====================
+ICONO
+====================*/
+
+.btn-icono{
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 0 #0ea5e9;
+
+}
+
+.btn-icono span{
+
+    padding:18px 28px;
+
+    background:#38bdf8;
+
+    color:white;
+
+}
+
+.flecha-pseudo{
+
+    padding:18px;
+
+    background:#0ea5e9;
+
+    color:white;
+
+}
+
+/*====================
+NUMERO
+====================*/
+
+.btn-numero{
+
+    display:flex;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 0 #0ea5e9;
+
+}
+
+.numero-pseudo{
+
+    background:#0284c7;
+
+    color:white;
+
+    padding:18px 24px;
+
+    font-weight:bold;
+
+}
+
+.btn-numero .texto-pseudo{
+
+    background:#38bdf8;
+
+    color:white;
+
+    padding:18px 30px;
+
+}
+
+.btn-numero:hover{
+
+    transform:translateY(-4px);
+
+}
+/*==========================
+        RESET
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    color:#eef2f7;
+    color:#333;
+}
+
+/* Ocultar todos */
+
+.celular,
+.tablet,
+.desktop{
+    display:none;
+}
+
+/*==========================
+        HEADER
+==========================*/
+
+header{
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/*==========================
+         MENÚ
+==========================*/
+
+nav{
+    background:#0b5ed7;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#0b5ed7;
+}
+
+/*==========================
+      CONTENIDO
+==========================*/
+
+main,
+section{
+
+    width:90%;
+    margin:20px auto;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+
+}
+
+h2{
+
+    color:#0d6efd;
+    margin-bottom:15px;
+
+}
+
+p{
+
+    line-height:1.6;
+
+}
+
+ul{
+
+    margin-left:20px;
+
+}
+
+li{
+
+    margin:10px 0;
+
+}
+
+/*==========================
+       TARJETAS
+==========================*/
+
+article{
+
+    background:#f5f5f5;
+    padding:20px;
+    margin-top:20px;
+    border-left:5px solid #0d6efd;
+    border-radius:10px;
+    transition:.3s;
+
+}
+
+article:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/*==========================
+        FOOTER
+==========================*/
+
+footer{
+
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+
+}
+
+/*==================================================
+            CELULAR VERTICAL
+==================================================*/
+
+@media screen and (max-width:768px) and (orientation:portrait){
+
+.celular{
+
+    display:block;
+
+}
+
+nav{
+
+    flex-direction:column;
+    align-items:center;
+
+}
+
+nav a{
+
+    width:90%;
+    text-align:center;
+
+}
+
+section{
+
+    width:95%;
+
+}
+
+}
+
+/*==================================================
+          CELULAR HORIZONTAL
+==================================================*/
+
+@media screen and (max-width:768px) and (orientation:landscape){
+
+.celular{
+
+    display:block;
+
+}
+
+nav{
+
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+section{
+
+    width:48%;
+    display:inline-block;
+    vertical-align:top;
+
+}
+
+}
+
+/*==================================================
+            TABLET VERTICAL
+==================================================*/
+
+@media screen and (min-width:769px) and (max-width:991px) and (orientation:portrait){
+
+.tablet{
+
+    display:block;
+
+}
+
+nav{
+
+    justify-content:space-around;
+
+}
+
+article{
+
+    margin-top:20px;
+
+}
+
+}
+
+/*==================================================
+          TABLET HORIZONTAL
+==================================================*/
+
+@media screen and (min-width:769px) and (max-width:991px) and (orientation:landscape){
+
+.tablet{
+
+    display:block;
+
+}
+
+article{
+
+    display:inline-block;
+    width:45%;
+    margin:10px;
+    vertical-align:top;
+
+}
+
+}
+
+/*==================================================
+                DESKTOP
+==================================================*/
+
+@media screen and (min-width:992px){
+
+.desktop{
+
+    display:block;
+
+}
+
+nav{
+
+    justify-content:flex-end;
+    padding-right:40px;
+
+}
+
+main{
+
+    width:85%;
+
+}
+
+section{
+
+    width:85%;
+
+}
+
+article{
+
+    display:inline-block;
+    width:30%;
+    margin:10px;
+    vertical-align:top;
+
+}
+
 }
