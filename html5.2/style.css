@@ -182,3 +182,40 @@ footer article{
     border: none;
     border-radius: 10px;
 }
+
+.pdf{
+    padding:30px;
+    background:#f4f4f4;
+    margin:20px 0;
+    text-align:center;
+}
+
+.pdf iframe{
+    width:100%;
+    height:700px;
+    border:2px solid #ccc;
+}
+
+.mapa{
+
+    background:#eeeeee;
+
+    padding:30px;
+
+    margin:20px 0;
+
+    text-align:center;
+
+}
+
+.mapa iframe{
+
+    width:100%;
+
+    height:450px;
+
+    border:none;
+
+    border-radius:10px;
+
+}
