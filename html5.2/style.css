@@ -161,3 +161,24 @@ footer article{
 .musica audio{
     width: 100%;
 }
+
+
+.video-web{
+    background: #f4f4f4;
+    padding: 30px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.video-web h2{
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.video-web iframe{
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
+}
