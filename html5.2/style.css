@@ -219,3 +219,49 @@ footer article{
     border-radius:10px;
 
 }
+
+
+.emisora{
+
+    background:#d79c10;
+
+    padding:30px;
+
+    margin:20px 0;
+
+    text-align:center;
+
+}
+
+.emisora iframe{
+
+    width:100%;
+
+    height:250px;
+
+    border:none;
+
+}
+
+
+.juego{
+
+    background:#f4f4f4;
+
+    padding:30px;
+
+    margin:20px 0;
+
+    text-align:center;
+
+}
+
+.juego iframe{
+
+    width:100%;
+
+    height:600px;
+
+    border:none;
+
+}
