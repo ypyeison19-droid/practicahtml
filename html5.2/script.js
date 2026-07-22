@@ -49,3 +49,54 @@ limpiar.addEventListener("click",()=>{
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
 });
+
+
+const nota = document.getElementById("nota");
+const puntosTexto = document.getElementById("puntos");
+const tiempoTexto = document.getElementById("tiempo");
+const area = document.getElementById("areaJuego");
+
+let puntos = 0;
+let tiempo = 30;
+
+function moverNota(){
+
+    let x = Math.random() * (area.clientWidth - 50);
+
+    let y = Math.random() * (area.clientHeight - 50);
+
+    nota.style.left = x + "px";
+
+    nota.style.top = y + "px";
+
+}
+
+nota.addEventListener("click",()=>{
+
+    puntos++;
+
+    puntosTexto.textContent = puntos;
+
+    moverNota();
+
+});
+
+moverNota();
+
+const intervalo = setInterval(()=>{
+
+    tiempo--;
+
+    tiempoTexto.textContent = tiempo;
+
+    if(tiempo<=0){
+
+        clearInterval(intervalo);
+
+        nota.style.display="none";
+
+        alert("🎉 Juego terminado.\nPuntaje: " + puntos);
+
+    }
+
+},1000);

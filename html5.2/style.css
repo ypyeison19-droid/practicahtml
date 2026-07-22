@@ -286,3 +286,43 @@ footer article{
     background:white;
     cursor:crosshair;
 }
+
+.juego-js{
+
+    background:#f4f4f4;
+
+    padding:30px;
+
+    text-align:center;
+
+    margin:20px 0;
+
+}
+
+#areaJuego{
+
+    width:900px;
+
+    height:400px;
+
+    margin:auto;
+
+    border:3px solid #333;
+
+    position:relative;
+
+    background:#fff;
+
+    overflow:hidden;
+
+}
+
+#nota{
+
+    position:absolute;
+
+    font-size:45px;
+
+    cursor:pointer;
+
+}
