@@ -265,3 +265,24 @@ footer article{
     border:none;
 
 }
+
+.paint{
+    background:#f4f4f4;
+    padding:30px;
+    margin:20px 0;
+    text-align:center;
+}
+
+.herramientas{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-bottom:20px;
+}
+
+#lienzo{
+    border:3px solid #000;
+    background:white;
+    cursor:crosshair;
+}
