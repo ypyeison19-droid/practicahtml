@@ -42,16 +42,16 @@ nav a{
 
 /* SLIDER */
 
-#slider{
+#slider {
     width: 100%;
-    height: 450px;
     margin: 20px 0;
+    background-color: #000; /* Fondo negro opcional por si el video no ocupa todo el ancho */
 }
 
-#slider video{
+#slider video {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Permite que la altura escala de forma proporcional */
+    display: block;
 }
 
 /* CONTENEDOR AMARILLO */
