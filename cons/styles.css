@@ -1,0 +1,394 @@
+/* ===================================================
+   1. VARIABLES DE DISEÑO & CONFIGURACIÓN GLOBAL
+   =================================================== */
+:root {
+  --bg-dark: #070a12;
+  --bg-card: rgba(18, 26, 43, 0.65);
+  --bg-card-hover: rgba(26, 37, 61, 0.85);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(56, 189, 248, 0.25);
+  
+  --accent-blue: #38bdf8;
+  --accent-purple: #818cf8;
+  --accent-cyan: #22d3ee;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(129, 140, 248, 0.08) 0%, transparent 40%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  line-height: 1.5;
+}
+
+/* ===================================================
+   2. MAPA DE ÁREAS CSS GRID (Estructura de la Clase)
+   =================================================== */
+.header  { grid-area: header; }
+.nav     { grid-area: nav; }
+.main    { grid-area: main; }
+.sidebar { grid-area: sidebar; }
+.footer  { grid-area: footer; }
+
+.app-container {
+  display: grid;
+  
+  /* 4 Columnas distribuidas */
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: auto auto 1fr auto;
+
+  /* MAPA DE ÁREAS
+     Usamos el punto '.' para crear la tercera columna vacía (empty) */
+  grid-template-areas:
+    "header  header  header   header"
+    "nav     nav     nav      nav"
+    "main    main    .        sidebar"
+    "footer  footer  footer   footer";
+
+  gap: 1.75rem;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* ===================================================
+   3. ESTILOS DE COMPONENTES GLASSMORPHISM
+   =================================================== */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+/* --- ENCABEZADO --- */
+.header {
+  background: linear-gradient(135deg, rgba(20, 30, 50, 0.7), rgba(10, 18, 32, 0.8));
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(34, 211, 238, 0.1);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  color: var(--accent-cyan);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 650px;
+  margin-top: 0.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25);
+}
+
+.btn-primary:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* --- NAVEGACIÓN --- */
+.nav {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1rem;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  color: var(--accent-blue);
+}
+
+/* --- MAIN CONTENIDO --- */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+}
+
+.blue-glow { color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.3); }
+.purple-glow { color: var(--accent-purple); border-color: rgba(129, 140, 248, 0.3); }
+
+.main-article h2, .highlight-article h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.main-article p, .highlight-article p {
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  margin-bottom: 0.75rem;
+}
+
+.highlight-article {
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.08), rgba(18, 26, 43, 0.65));
+  border-left: 4px solid var(--accent-purple);
+}
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.mini-card h4 {
+  color: var(--accent-cyan);
+  font-size: 0.875rem;
+  margin-bottom: 0.35rem;
+}
+
+.mini-card p {
+  color: var(--text-muted);
+  font-size: 0.825rem;
+}
+
+/* --- SIDEBAR / ASIDE --- */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.widget-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.stat-container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+.widget-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.widget-info h3, .widget-team h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.825rem;
+}
+
+.info-key { color: var(--text-muted); }
+.info-val { color: var(--text-primary); font-weight: 500; }
+
+.team-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.team-tag {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* --- FOOTER --- */
+.footer {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.825rem;
+  color: var(--text-muted);
+}
+
+.footer-badge {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+/* ===================================================
+   4. RESPONSIVIDAD (MEDIA QUERIES)
+   =================================================== */
+@media (max-width: 900px) {
+  .app-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebar"
+      "footer";
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .inner-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMPLEATE AI — Portal de Investigación & Desarrollos</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Fuente Inter desde Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Layout Principal con CSS Grid -->
+  <div class="app-container">
+
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="header">
+      <div class="header-branding">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Investigación Activa &bull; SENA</span>
+        </div>
+        <h1>EMPLEATE <span class="gradient-text">AI</span></h1>
+        <p class="header-description">
+          Plataforma de entrenamiento conversacional asistido por Inteligencia Artificial para la preparación de entrevistas laborales.
+        </p>
+      </div>
+      <div class="header-actions">
+        <a href="#contacto" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Ver Proyecto
+        </a>
+      </div>
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li><a href="#resumen" class="nav-item active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Resumen
+        </a></li>
+        <li><a href="#antecedentes" class="nav-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          Antecedentes
+        </a></li>
+        <li><a href="#metodologia" class="nav-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          Metodología
+        </a></li>
+        <li><a href="#diferenciacion" class="nav-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="12 8 8 12 12 16 12 8"></polygon></svg>
+          Diferenciación
+        </a></li>
+      </ul>
+    </nav>
+
+    <!-- SECCIÓN PRINCIPAL (MAIN) -->
+    <main class="main">
+      
+      <!-- Articulo 1: Planteamiento del Problema -->
+      <article class="glass-card main-article">
+        <div class="card-header">
+          <div class="card-icon blue-glow">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h2>Planteamiento del Problema</h2>
+        </div>
+        <p>
+          Muchos futuros egresados y profesionales enfrentan barreras críticas al buscar su primer empleo formal. La escasa preparación previa para abordar entrevistas, combinada con nerviosismo y respuestas poco estructuradas, genera una desventaja competitiva considerable.
+        </p>
+        <p>
+          Esta problemática no radica en la falta de competencias técnicas o profesionales del aspirante, sino en la ausencia de herramientas prácticas que fortalezcan su comunicación, lenguaje corporal y confianza ante el reclutador.
+        </p>
+      </article>
+
+      <!-- Articulo 2: Solución Propuesta -->
+      <article class="glass-card highlight-article">
+        <div class="card-header">
+          <div class="card-icon purple-glow">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 12L2.1 12a10 10 0 0 1 9.9-10v10z"></path></svg>
+          </div>
+          <h2>Innovación Asistida por IA</h2>
+        </div>
+        <p>
+          Nuestra solución integra un entorno interactivo que evalúa fortalezas y debilidades en tiempo real. Proporciona simulaciones adaptativas según el perfil profesional deseado, retroalimentando aspectos clave como estructuración de respuestas, dicción y optimización del perfil CV.
+        </p>
+      </article>
+
+      <!-- Sub-grid de tarjetas secundarias dentro de MAIN -->
+      <div class="inner-grid">
+        <div class="mini-card">
+          <h4>01. Diagnóstico</h4>
+          <p>Identificación automatizada de falencias en hojas de vida y comunicación oral.</p>
+        </div>
+        <div class="mini-card">
+          <h4>02. Entrenamiento</h4>
+          <p>Banco interactivo de preguntas frecuentes por área de especialidad.</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ESPACIO EN BLANCO (.) DEFINIDO EN CSS GRID -->
+
+    <!-- BARRA LATERAL (SIDEBAR / ASIDE) -->
+    <aside class="sidebar">
+      
+      <!-- Widget Metric -->
+      <div class="glass-card widget-stat">
+        <span class="widget-label">DESEMPLEO NACIONAL (DNP)</span>
+        <div class="stat-container">
+          <span class="stat-value">8.8%</span>
+          <span class="stat-trend negative">&darr; Meta de reducción</span>
+        </div>
+        <p class="widget-desc">Tasa de referencia utilizada para proyectar el impacto social en Popayán.</p>
+      </div>
+
+      <!-- Widget Ficha Técnica -->
+      <div class="glass-card widget-info">
+        <h3>Ficha del Proyecto</h3>
+        <ul class="info-list">
+          <li>
+            <span class="info-key">Ubicación</span>
+            <span class="info-val">Popayán, Cauca</span>
+          </li>
+          <li>
+            <span class="info-key">Institución</span>
+            <span class="info-val">SENA CTPI</span>
+          </li>
+          <li>
+            <span class="info-key">Plataforma</span>
+            <span class="info-val">Mobile App (PWA)</span>
+          </li>
+          <li>
+            <span class="info-key">Enfoque</span>
+            <span class="info-val">IA Conversacional</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Widget Integrantes -->
+      <div class="glass-card widget-team">
+        <h3>Equipo Desarrollador</h3>
+        <div class="team-tags">
+          <span class="team-tag">Angela Q.</span>
+          <span class="team-tag">Andres M.</span>
+          <span class="team-tag">Alejandro U.</span>
+          <span class="team-tag">Cristian M.</span>
+          <span class="team-tag">Felipe G.</span>
+          <span class="team-tag">Florelia S.</span>
+          <span class="team-tag">Jhamilton A.</span>
+          <span class="team-tag">Juan L.</span>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>&copy; 2026 EMPLEATE AI &bull; Proyecto de Investigación y Desarrollo de Software</p>
+        <span class="footer-badge">Diseñado con CSS Grid & Flexbox</span>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
