@@ -259,9 +259,9 @@ td {
     border: 8px solid orange;
 
     background-image:
-        url("araña3.jpg"),
-        url("paisajeara.jpg"),
-        url("fondo_naranja.jpg");
+        url("img/araña3.jpg"),
+        url("img/paisajeara.jpg"),
+        url("img/fondo_naranja.jpg");
 
     background-repeat: no-repeat, no-repeat, no-repeat;
 
@@ -294,7 +294,7 @@ td {
 
     height: 500px;
 
-    background-image: url("paisaje.jpg");
+    background-image: url("img/paisaje.jpg");
 
     background-size: cover;
 
@@ -319,7 +319,7 @@ td {
 
     height: 500px;
 
-    background-image: url("paisaje.jpg");
+    background-image: url("img/angellll.png");
 
     background-size: cover;
 
@@ -352,7 +352,7 @@ td {
 
     margin: auto;
 
-    background-image: url("paisaje.jpg");
+    background-image: url("img/paisaje.jpg");
 
     background-size: cover;
 
@@ -474,7 +474,7 @@ td {
 
     margin: 50px auto;
 
-    background: url("https://webdevpuneet.com/wp-content/uploads/2021/05/cat1.png")
+    background: url("img/gtr.png")
     no-repeat center;
 
     background-size: cover;
@@ -495,7 +495,7 @@ td {
 
     margin: 50px auto;
 
-    background: url("https://webdevpuneet.com/wp-content/uploads/2021/05/cat1.png")
+    background: url("img/gtr.png")
     no-repeat center;
 
     background-size: cover;
@@ -885,9 +885,10 @@ td {
     );
 
     -webkit-background-clip: text ;
-
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 
 /* CONTENEDOR GENERAL */
 
@@ -980,7 +981,7 @@ td {
     border-radius: 50%;
 
     background-image:
-    url("mapaaaaa.jpg.png");
+    url("img/mapaaaaa.jpg.png");
 
     background-size: cover;
 
@@ -1082,7 +1083,7 @@ td {
     width: 120px;
 
     background-image:
-        url("muñexopng.png"),
+        url("img/muñexopng.png"),
         linear-gradient(
             to bottom,
             #fcd116 50%,
